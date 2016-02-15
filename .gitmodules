@@ -1,0 +1,4 @@
+[submodule "symlinks/zsh/prezto"]
+	path = symlinks/zsh/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
+  ignore = dirty

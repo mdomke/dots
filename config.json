@@ -1,0 +1,59 @@
+{
+  "formulas": [
+    "python",
+    "python3",
+    "neovim",
+    "zsh",
+    "ctags",
+    "git",
+    "git-flow-avh",
+    "hub",
+    "tmux",
+    "mr",
+    "grc",
+    "fasd",
+    "the_silver_searcher",
+    "httpie",
+    "jq",
+    "thefuck",
+    "itermocil",
+    "gitignore"
+  ],
+  "taps": [
+    "caskroom/cask",
+    "caskroom/versions",
+    "homebrew/binary",
+    "homebrew/completions",
+    "homebrew/nginx",
+    "homebrew/versions",
+    "neovim/neovim",
+    "tomanthony/brews",
+    "karan/karan"
+  ],
+  "casks": [
+    "iterm2-nightly",
+    "google-chrome-beta",
+    "virtualbox",
+    "seil karabiner",
+    "spotify",
+    "viscosity",
+    "istat-menus",
+    "1password",
+    "launchbar",
+    "gpgtools",
+    "adium"
+  ],
+  "after-scrips": [
+  ],
+  "symlinks": {
+    ".*": "~",
+    "zsh/.*": "~",
+    "zsh/prezto/": "~/.zprezto/",
+    "zsh/settings/": "~/.zsettings",
+    "zsh/themes/": "~/.zthemes",
+    "vim/": "~/.config/nvim/",
+    "fonts/*": "~/Library/Fonts/",
+    "bin/*": "~/.bin/",
+    "adium/*.AdiumMessageStyle": "~/Library/Application Support/Adium 2.0/Message Styles/"
+  }
+}

@@ -1,10 +1,12 @@
 from __future__ import print_function
+
 import fnmatch
 import glob
-import os
 import json
-import sys
+import os
 import pwd
+import sys
+
 from invoke import task, run
 
 
@@ -22,7 +24,7 @@ def read_config():
 
 @task
 def init_submodules():
-    task_description('Update submodules')
+    description('Update submodules')
     run('git submodule update --init --recursive')
 
 
@@ -46,7 +48,7 @@ def uninstall():
 
 @task
 def update():
-    task_description('Updating')
+    description('Updating')
     update_homebrew()
     update_vim_plugins()
 
@@ -54,7 +56,7 @@ def update():
 @task
 def install_homebrew():
     if run('which brew', hide=True).failed:
-        task_description('Installing homebrew')
+        description('Installing homebrew')
         url = 'https://raw.githubusercontent.com/Homebrew/install/master/install'
         run('ruby -e "$(curl -fsSL %s)"' % url)
 
@@ -64,7 +66,7 @@ def install_homebrew():
 
 @task
 def update_homebrew():
-    task_description('Instaling/updating homebrew packages')
+    description('Instaling/updating homebrew packages')
     run('brew update', warn=True)
     run('brew upgrade', warn=True)
 
@@ -90,7 +92,7 @@ def install_brews():
 
 @task
 def setup_vim():
-    task_description('Setting up vim')
+    description('Setting up vim')
     install_vimplug()
     install_vim_plugins()
     end()
@@ -116,7 +118,7 @@ def update_vim_plugins():
 
 @task
 def enable_zsh():
-    task_description('Setup zsh')
+    description('Setup zsh')
     if 'zsh' in os.environ['SHELL']:
         info('zsh is already configured as default shell')
         end()
@@ -136,7 +138,7 @@ def enable_zsh():
 
 @task
 def install_iterm_themes():
-    task_description('Installing iterm themes')
+    description('Installing iterm themes')
 
     tool = '/usr/libexec/PlistBuddy -c'
     plist = '$HOME/Library/Preferences/com.googlecode.iterm2.plist'
@@ -153,7 +155,7 @@ def install_iterm_themes():
 
 @task
 def install_python_essentials():
-    task_description('Install essential python tools')
+    description('Install essential python tools')
     packages = ['neovim', 'pygments']
     for package in packages:
         run('pip install %s' % package)
@@ -209,14 +211,14 @@ def expand_targets(target, source_glob):
 
 @task(read_config)
 def link():
-    task_description('Creating symlinks...')
+    description('Creating symlinks...')
     link_op()
     end()
 
 
 @task(read_config)
 def unlink():
-    task_description('Removing symlinks...')
+    description('Removing symlinks...')
     link_op(create=False)
     end()
 
@@ -235,7 +237,7 @@ def link_op(create=True):
                 run('rm -f "%s"' % expanded_target)
 
 
-def task_description(message):
+def description(message):
     print(" ===> %s" % message)
 
 

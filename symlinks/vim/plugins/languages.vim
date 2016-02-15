@@ -15,6 +15,10 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 
+" Haskell
+Plug 'dag/vim2hs', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+
 " Other
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'

@@ -23,6 +23,7 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'jtratner/vim-flavored-markdown'
+Plug 'dag/vim-fish'
 
 " Python
 Plug 'klen/python-mode', { 'for': 'python', 'branch': 'develop' }

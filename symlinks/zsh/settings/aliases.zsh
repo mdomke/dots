@@ -30,18 +30,10 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vim $dots/zsh/aliases.zsh' #alias edit
-alias ar='source $dots/zsh/aliases.zsh'  #alias reload
+alias ae='vim ~/.zsettings/aliases.zsh' #alias edit
+alias ar='source ~/.zsettings/aliases.zsh'  #alias reload
 
-# vim using
-# mvim --version > /dev/null 2>&1
-# MACVIM_INSTALLED=$?
-# if [ $MACVIM_INSTALLED -eq 0 ]; then
-#   alias vim="mvim -v"
-# fi
 alias vim="nvim"
-
-# vimrc editing
 alias ve='vim ~/.config/nvim/init.vim'
 
 # zsh profile editing
@@ -82,13 +74,11 @@ alias cl='clear'
 alias ccat='pygmentize'
 
 # Zippin
-alias gz='tar -zcvf'
+alias gz='tar -cvjf'
+alias gx='tar -xvjf'
 
 alias ka9='killall -9'
 alias k9='kill -9'
-
-# Gem install
-alias sgi='sudo gem install --no-ri --no-rdoc'
 
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
@@ -103,9 +93,6 @@ alias py-build="python setup.py bdist_wheel"
 alias pip-upgrade="pip freeze --local | grep -v '^\-e' | cut -f 1 -d = | xargs pip install -U"
 alias repl="ptipython"
 
-
-# Redis
-alias rstage="redis-cli -h ant-core-staging-media2.n.collins.kg -p 6380"
 
 # Pyenv
 alias pec="pyenv virtualenv"

@@ -84,7 +84,12 @@ alias k9='kill -9'
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
 alias lsnet="lsof -nP -i4TCP -sTCP:LISTEN"
-alias ping="/usr/local/bin/grc ping"
+
+local grc="/usr/local/bin/grc -es --colour=auto"
+alias ping="${grc} ping"
+alias dig="${grc} dig"
+alias ifconfig="${grc} ifconfig"
+alias traceroute="${grc} ifconfig"
 
 # Python
 alias py2="python2"

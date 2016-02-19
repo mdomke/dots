@@ -1,2 +1,3 @@
 export GOPATH="$HOME/Source/play/go"
-export PATH="$PATH:$HOME/.bin:$GOPATH/bin"
+export TEXBINDIR="/Library/TeX/texbin"
+export PATH="$HOME/.bin:$PATH:$GOPATH/bin:$TEXBINDIR"

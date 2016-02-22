@@ -1,7 +1,30 @@
-fpath=($HOME/.zthemes $fpath)
+zmodload zsh/zprof
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fpath=("${HOME}/.zthemes" ${fpath})
+
+source "${HOME}/.dots/zgen/zgen.zsh"
+
+if ! zgen saved;
+then
+  zgen prezto '*:*' case-sensitive 'no'
+  zgen prezto '*:*' color 'yes'
+  zgen prezto editor key-bindings 'vi'
+  zgen prezto prompt theme 'lambda'
+  zgen prezto gpg-agent ssh-support 'yes'
+  zgen prezto ssh-agent forwarding 'yes'
+
+  zgen prezto
+  zgen prezto git
+  zgen prezto ssh
+  zgen prezto gpg
+  zgen prezto homebrew
+  zgen prezto python
+  zgen prezto history-substring-search
+  zgen prezto syntax-highlighting
+
+  zgen load "${HOME}/.zsettings"
+
+  zgen save
 fi
 
-for config_file ($HOME/.zsettings/*.zsh) source $config_file
+for file (${HOME}/.dots/symlinks/zsh/overwrite/*.zsh) source $file

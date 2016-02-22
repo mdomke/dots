@@ -2,8 +2,11 @@
   "formulas": [
     "python",
     "python3",
+    "pyenv",
+    "pyenv-virtualenv",
     "neovim",
     "zsh",
+    "fzf",
     "ctags",
     "git",
     "git-flow-avh",
@@ -48,7 +51,6 @@
   "symlinks": {
     ".*": "~",
     "zsh/.*": "~",
-    "zsh/prezto/": "~/.zprezto/",
     "zsh/settings/": "~/.zsettings",
     "zsh/themes/": "~/.zthemes",
     "vim/": "~/.config/nvim/",

@@ -11,20 +11,18 @@ alias -g H='| head'
 alias -g L="| less"
 alias -g N="| /dev/null"
 alias -g S='| sort'
-alias -g G='| grep' # now you can do: ls foo G something
+alias -g G='| grep'
 
 # PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
-# Moving around
-alias cdb='cd -'
-
-# Show human friendly numbers and colors
+# Overwrite common commands
 alias df='df -h'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 alias du='du -h -d 2'
+alias rm='nocorrect rm'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -39,6 +37,7 @@ alias ve='vim ~/.config/nvim/init.vim'
 # zsh profile editing
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
+
 
 # Git Aliases
 alias gpl='git pull'

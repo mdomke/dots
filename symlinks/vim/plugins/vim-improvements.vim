@@ -21,9 +21,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
 
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf.vim'
 
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-sensible'

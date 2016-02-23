@@ -17,6 +17,7 @@ then
   zgen prezto git
   zgen prezto ssh
   zgen prezto gpg
+  zgen prezto fasd
   zgen prezto homebrew
   zgen prezto python
   zgen prezto history-substring-search

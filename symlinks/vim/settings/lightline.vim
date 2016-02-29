@@ -10,7 +10,7 @@
       " \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       "
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'apprentice',
       \ 'active': {
       \   'left': [ [ 'mode' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]

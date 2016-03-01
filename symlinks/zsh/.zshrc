@@ -13,6 +13,8 @@ then
   zgen prezto gpg-agent ssh-support 'yes'
   zgen prezto ssh-agent forwarding 'yes'
 
+  zgen load Tarrasch/zsh-autoenv
+
   zgen prezto
   zgen prezto git
   zgen prezto ssh

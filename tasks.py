@@ -55,7 +55,7 @@ def update():
 
 @task
 def install_homebrew():
-    if run('which brew', hide=True).failed:
+    if run('which brew', warn=True, hide=True).failed:
         description('Installing homebrew')
         url = 'https://raw.githubusercontent.com/Homebrew/install/master/install'
         run('ruby -e "$(curl -fsSL %s)"' % url)
@@ -199,7 +199,7 @@ def expand_targets(target, source_glob):
         target_dir = os.path.dirname(target_dir)
     if not os.path.exists(target_dir):
         op('Creating dir for link targets (%s)' % collapseuser(target_dir))
-        run('mkdir -p {}'.format(target_dir))
+        run('mkdir -p "{}"'.format(target_dir))
 
     expanded = []
     for source in glob.iglob(os.path.join(SYMLINKDIR, source_glob)):

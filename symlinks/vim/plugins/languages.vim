@@ -2,6 +2,7 @@
 " Plug 'scrooloose/syntastic'
 Plug 'benekastah/neomake'
 Plug 'valloric/youcompleteme', { 'for': ['python', 'c', 'cpp', 'go', 'rust'], 'do': './install.py --clang-completer --gocode-completer --racer-completer' }
+" Plug 'shougo/deoplete.nvim'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " HTML/CSS/LESS

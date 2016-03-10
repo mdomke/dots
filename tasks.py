@@ -156,7 +156,7 @@ def install_iterm_themes():
 @task
 def install_python_essentials():
     description('Install essential python tools')
-    packages = ['neovim', 'pygments']
+    packages = ['neovim']
     for package in packages:
         run('pip install %s' % package)
 

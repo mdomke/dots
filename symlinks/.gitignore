@@ -30,3 +30,7 @@ Session.vim
 # SASS
 # ----------------------------------------------------------------------------------------------
 .sass-cache
+.autoenv.zsh
+.autoenv_leave.zsh
+.ropeproject/
+.python-version

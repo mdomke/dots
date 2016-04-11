@@ -12,6 +12,7 @@ alias -g L="| less"
 alias -g N="| /dev/null"
 alias -g S='| sort'
 alias -g G='| grep'
+alias -g P='| pbcopy'
 
 # PS
 alias psa="ps aux"
@@ -94,7 +95,7 @@ alias traceroute="${grc} ifconfig"
 alias py2="python2"
 alias py3="python3"
 alias py-build="python setup.py bdist_wheel"
-alias pip-upgrade="pip freeze --local | grep -v '^\-e' | cut -f 1 -d = | xargs pip install -U"
+alias pipup="pip list -o | cut -f 1 -d ' ' | xargs pip install -U"
 alias repl="ipython"
 
 

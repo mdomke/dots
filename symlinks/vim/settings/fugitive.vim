@@ -4,6 +4,7 @@
 nnoremap <silent> ,dg :diffget<CR>
 nnoremap <silent> ,dp :diffput<CR>
 
+nnoremap <silent> ,gb :Gblame<CR>
 nnoremap <silent> ,gs :Gstatus<CR>
 nnoremap <silent> ,gc :Gcommit --verbose<CR>
 nnoremap <silent> ,gm :Gmerge<CR>

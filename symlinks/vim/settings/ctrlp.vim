@@ -10,6 +10,6 @@ else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
-nnoremap <silent> ,f :CtrlP<CR>
-nnoremap <silent> ,b :CtrlPBuffer<cr>
-nnoremap <silent> ,t :CtrlPBufTag<CR>
+" nnoremap <silent> ,f :CtrlP<CR>
+" nnoremap <silent> ,b :CtrlPBuffer<cr>
+" nnoremap <silent> ,t :CtrlPBufTag<CR>

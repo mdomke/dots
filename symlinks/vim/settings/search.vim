@@ -18,18 +18,19 @@ function! GetVisual()
   return selection
 endfunction
 
-" Open the Ag command and place the cursor into the quotes
-nmap ,ag :Ag ""<Left>
-nmap ,af :AgFile ""<Left>
-
-"grep the current word using K (mnemonic Kurrent)
-nnoremap <silent> K :Ag <cword><CR>
-
-"grep visual selection
-vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
-
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
+" Open the Ag command and place the cursor into the quotes
+" nmap ,ag :Ag ""<Left>
+nmap ,af :AgFile ""<Left>
+
+"grep the current word using K (mnemonic Kurrent)
+" nnoremap <silent> K :Ag <cword><CR>
+
+"grep visual selection
+" vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
+
+
 " Ag for the last search.
-nnoremap <silent> <leader>// :execute "Ag! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
+" nnoremap <silent> <leader>// :execute "Ag! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>

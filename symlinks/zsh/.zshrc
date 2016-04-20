@@ -34,3 +34,5 @@ for file (${HOME}/.dots/symlinks/zsh/overwrite/*.zsh) source $file
 
 # added by travis gem
 [ -f /Users/mdomke/.travis/travis.sh ] && source /Users/mdomke/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

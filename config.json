@@ -6,7 +6,6 @@
     "pyenv-virtualenv",
     "neovim",
     "zsh",
-    "fzf",
     "ctags",
     "git",
     "git-flow-avh",

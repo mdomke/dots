@@ -133,10 +133,10 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 " Resize windows with arrow keys
-nnoremap <Up> <C-w>+
-nnoremap <Down> <C-w>-
-nnoremap <Left> <C-w><
-nnoremap <Right>  <C-w>>
+"nnoremap <Up> <C-w>+
+"nnoremap <Down> <C-w>-
+"nnoremap <Left> <C-w><
+"nnoremap <Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 " imap <silent> <C-K> <%=   %><Esc>3hi

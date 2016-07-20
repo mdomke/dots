@@ -45,6 +45,13 @@ ifip() {
   ifconfig $1 | awk '/inet /{print$2}'
 }
 
-function cryptpw() {
+cryptpw() {
   python -c "import bcrypt; print bcrypt.hashpw('$1', bcrypt.gensalt())"
+}
+
+tunnel-kube1() {
+  host=${1:-coreos.master}
+	ssh -M -S /tmp/tunnel-kube1 -fnNT -L 9090:localhost:8080 ${host}
+	vared -p 'Tunnel is open (enter to stop)' -c tmp
+	ssh -S /tmp/tunnel-kube1 -O exit kube1.master
 }

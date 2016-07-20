@@ -47,22 +47,24 @@ alias gi='vim .gitignore'
 alias guns='git unstage'
 alias gunc='git uncommit'
 alias gam='git amend --reset-author'
+alias gtg='git tag -a -s'
+alias gtl='git tag -l -n1 | gsort -V'
 
-alias gff='git flow feature'
-alias gffs='git flow feature start'
-alias gffp='git flow feature publish'
-alias gfff='git flow feature finish'
-alias gffr='git flow feature rebase'
+alias gff='git-flow feature'
+alias gffs='git-flow feature start'
+alias gffp='git-flow feature publish'
+alias gfff='git-flow feature finish'
+alias gffr='git-flow feature rebase'
 
-alias gfrs='git flow release start'
-alias gfrf='git flow release finish -s'
-alias gfrp='git flow release publish'
-alias gfrr='git flow release rebase'
+alias gfrs='git-flow release start'
+alias gfrf='git-flow release finish -s'
+alias gfrp='git-flow release publish'
+alias gfrr='git-flow release rebase'
 
-alias gfhs='git flow hotfix start'
-alias gfhf='git flow hotfix finish -s'
-alias gfhp='git flow hotfix publish'
-alias gfhr='git flow hotfix rebase'
+alias gfhs='git-flow hotfix start'
+alias gfhf='git-flow hotfix finish -s'
+alias gfhp='git-flow hotfix publish'
+alias gfhr='git-flow hotfix rebase'
 
 # Common shell functions
 alias less='less -r'
@@ -118,3 +120,5 @@ alias it="itermocil"
 alias dcp="docker-compose"
 alias dma="docker-machine"
 alias dsw="docker-swarm"
+alias drm='docker rm -v $(docker ps -aq -f status=exited)'
+alias drmi='docker rmi $(docker images -f "dangling=true" -q)'

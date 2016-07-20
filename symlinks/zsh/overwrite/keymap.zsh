@@ -10,6 +10,3 @@ bindkey "^X^L" insert-last-command-output
 bindkey '^r' history-incremental-search-backward
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
-
-# FZF keybindigns
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"

@@ -112,7 +112,7 @@
   cmd="opendiff '$LOCAL' '$REMOTE' -merge '$MERGED'"
 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [rerere]
@@ -127,8 +127,8 @@
 	algorithm = patience
 
 [difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [apply]
   whitespace = nowarn
@@ -142,7 +142,7 @@
 
 [core]
   autocrlf = false
-  excludesfile = /Users/mdomke/.gitignore
+	excludesfile = /Users/mdomke/.gitignore
   editor = nvim
 
 [advice]
@@ -158,3 +158,9 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[gitflow "feature.finish"]
+	keepremote = yes
+[gitflow "release.finish"]
+	keepremote = yes
+[gitflow "hotfix.finish"]
+	keepremote = yes

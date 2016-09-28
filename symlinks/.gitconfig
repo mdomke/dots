@@ -100,6 +100,7 @@
   summary = true
   verbosity = 1
   tool = vimdiff
+  ff = false
 
 [mergetool]
   prompt = false
@@ -140,10 +141,14 @@
   # the usual default is to push all branches
   default = tracking
 
+[pull]
+  rebase = true
+
 [core]
   autocrlf = false
 	excludesfile = /Users/mdomke/.gitignore
   editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [advice]
   statusHints = false

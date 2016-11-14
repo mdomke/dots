@@ -1,5 +1,5 @@
 " Use truecolor in nvim
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 " Colorscheme seoul256
 let g:seoul256_background = 235

@@ -76,7 +76,7 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
-alias ccat='pygmentize'
+alias dog='pygmentize'
 
 # Zippin
 alias gz='tar -cvjf'

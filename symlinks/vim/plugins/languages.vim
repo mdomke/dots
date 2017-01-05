@@ -4,10 +4,7 @@ Plug 'benekastah/neomake'
 Plug 'valloric/youcompleteme', { 'for': ['python', 'c', 'cpp', 'go', 'rust'], 'do': './install.py --clang-completer --gocode-completer --racer-completer' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
-" function! DoRemote(arg)
-"   UpdateRemotePlugins
-" endfunction
-" Plug 'shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi'
 
 

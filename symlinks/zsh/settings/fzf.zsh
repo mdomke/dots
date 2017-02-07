@@ -3,6 +3,7 @@
 
 export FZF_COMPLETION_TRIGGER='##'
 export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --inline-info'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then

@@ -31,7 +31,7 @@ Plug 'jtratner/vim-flavored-markdown'
 Plug 'dag/vim-fish'
 
 " Python
-Plug 'klen/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " Dockerfile
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }

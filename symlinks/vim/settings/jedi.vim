@@ -8,8 +8,8 @@ let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 0
 
 let g:jedi#goto_assignments_command = "<leader>ja"
-let g:jedi#goto_command = "<leader>jg"
+let g:jedi#goto_command = "<leader>jd"
 let g:jedi#rename_command = "<leader>jr"
-let g:jedi#usages_command = "<leader>ju"
+let g:jedi#usages_command = "<leader>su"
 let g:jedi#documentation_command = ""
 let g:jedi#show_call_signatures = 1

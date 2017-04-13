@@ -1,7 +1,8 @@
 " Plug 'godlygeek/csapprox'
 Plug 'chrisbra/colorizer'
 Plug 'itchyny/lightline.vim'
-Plug 'romainl/Apprentice'
+" Plug 'romainl/Apprentice'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'jeetsukumaran/vim-markology'
 
 """ Themes

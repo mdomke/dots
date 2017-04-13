@@ -6,7 +6,7 @@ let g:seoul256_background = 235
 
 set background=dark
 
-colorscheme apprentice
+colorscheme nord
 
 
 if has("gui_running")

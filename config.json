@@ -2,14 +2,11 @@
   "formulas": [
     "python",
     "python3",
-    "pyenv",
-    "pyenv-virtualenv",
     "neovim",
     "zsh",
     "ctags",
     "git",
     "git-flow-avh",
-    "hub",
     "tmux",
     "mr",
     "grc",
@@ -33,10 +30,10 @@
     "karan/karan"
   ],
   "casks": [
-    "iterm2-nightly",
+    "iterm2-beta",
     "google-chrome-beta",
     "virtualbox",
-    "seil karabiner",
+    "karabiner-elements",
     "spotify",
     "viscosity",
     "istat-menus",

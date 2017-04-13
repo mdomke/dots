@@ -1,11 +1,11 @@
 " Syntax 
 " Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
-Plug 'valloric/youcompleteme', { 'for': ['python', 'c', 'cpp', 'go', 'rust'], 'do': './install.py --clang-completer --gocode-completer --racer-completer' }
+" Plug 'valloric/youcompleteme', { 'for': ['python', 'c', 'cpp', 'go', 'rust'], 'do': './install.py --clang-completer --gocode-completer --racer-completer' }
+Plug 'neomake/neomake'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
-" Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-jedi'
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 
 " HTML/CSS/LESS

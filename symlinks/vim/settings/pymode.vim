@@ -20,5 +20,10 @@ let g:pymode_rope_rename_bind = '<leader>rr'
 let g:pymode_rope_autoimport_bind = '<leader>ra'
 let g:pymode_rope_organize_imports_bind = '<leader>ro'
 
+" let g:pymode_virtualenv = 1
+" let g:pymode_virtualenv_path = '/usr/local/var/pyenv/versions/p2'
+
 
 nnoremap <leader>rg :PymodeRopeRegenerate<cr>
+
+vmap <leader>oi !eingefuhrt<cr>

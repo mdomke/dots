@@ -8,4 +8,5 @@ endfunction
 
 autocmd! BufWritePost * call <SID>RunNeomake()
 
+let g:neomake_open_list = 2
 

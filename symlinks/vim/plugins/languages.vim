@@ -20,7 +20,8 @@ Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 
 " Haskell
-Plug 'dag/vim2hs', { 'for': 'haskell' }
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Other

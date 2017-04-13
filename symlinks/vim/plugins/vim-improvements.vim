@@ -27,5 +27,3 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-Plug 'tpope/vim-sensible'

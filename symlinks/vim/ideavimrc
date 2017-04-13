@@ -1,0 +1,22 @@
+set ignorecase
+set smartcase
+set scrolloff=3
+set surround
+let mapleader = ","
+
+noremap 0 ^
+noremap Y y$
+
+nmap <leader>jd :action GotoDeclaration<CR>
+nmap <leader>p  :action Back<CR>
+nmap <leader>n  :action Foward<CR>
+nmap <leader>f  :action GotoFile<CR>
+nmap <leader>c  :action GotoClass<CR>
+nmap gcc :action CommentByLineComment<CR>
+vmap gc : action CommentByLineComment<CR>
+
+
+nnoremap / :action Find<CR>
+nnoremap n :action FindNext<CR>
+nnoremap N :action FindPrevious<CR>
+nnoremap U :action $Redo<CR>

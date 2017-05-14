@@ -12,11 +12,13 @@ then
   zgen prezto prompt theme 'lambda'
   zgen prezto gpg-agent ssh-support 'yes'
   zgen prezto ssh-agent forwarding 'yes'
+  zgen prezto ssh load identities figo id_rsa
 
   zgen load Tarrasch/zsh-autoenv
 
   zgen prezto
   zgen prezto git
+  zgen prezto editor
   zgen prezto ssh
   zgen prezto gpg
   zgen prezto fasd

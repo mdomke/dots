@@ -5,8 +5,8 @@ Plug 'neomake/neomake'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-
 
 " HTML/CSS/LESS
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -20,15 +20,20 @@ Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 
 " Haskell
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'}
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell'}
+Plug 'alx741/vim-hindent', { 'for': 'haskell'}
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
 " Other
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'jtratner/vim-flavored-markdown'
 Plug 'dag/vim-fish'
+Plug 'ElmCast/elm-vim', { 'for': 'elm'}
 
 " Python
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }

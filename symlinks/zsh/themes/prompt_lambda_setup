@@ -54,8 +54,8 @@ function prompt_lambda_setup {
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:branch' format "${colors[7]}%b%f"
   zstyle ':prezto:module:git:info:commit' format ":${colors[8]}%.7c%f "
-  zstyle ':prezto:module:git:info:ahead' format "${colors[2]}⬆%f"
-  zstyle ':prezto:module:git:info:behind' format "${colors[2]}⬇%f"
+  zstyle ':prezto:module:git:info:ahead' format "${colors[1]}⬆%f"
+  zstyle ':prezto:module:git:info:behind' format "${colors[1]}⬇%f"
   zstyle ':prezto:module:git:info:added' format "${colors[5]}●%f"
   zstyle ':prezto:module:git:info:deleted' format "${colors[4]}●%f"
   zstyle ':prezto:module:git:info:modified' format "${colors[6]}●%f"

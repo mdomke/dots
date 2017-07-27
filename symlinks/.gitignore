@@ -33,3 +33,5 @@ Session.vim
 .ropeproject/
 .python-version
 .idea
+
+pylama.ini

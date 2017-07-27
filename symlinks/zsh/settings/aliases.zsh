@@ -125,3 +125,5 @@ alias dma="docker-machine"
 alias dsw="docker-swarm"
 alias drm='docker rm -v $(docker ps -aq -f status=exited)'
 alias drmi='docker rmi $(docker images -f "dangling=true" -q)'
+
+alias ci="fly -t ci"

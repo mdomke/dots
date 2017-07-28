@@ -32,7 +32,6 @@
   "casks": [
     "iterm2-beta",
     "google-chrome-beta",
-    "virtualbox",
     "karabiner-elements",
     "spotify",
     "viscosity",

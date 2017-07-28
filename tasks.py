@@ -16,108 +16,95 @@ SYMLINKDIR = 'symlinks'
 
 
 @task
-def read_config():
+def read_config(ctx):
     global CONFIG
     with open('./config.json') as fp:
         CONFIG = json.load(fp)
 
 
 @task
-def init_submodules():
+def init_submodules(ctx):
     description('Update submodules')
-    run('git submodule update --init --recursive')
-
-
-@task(read_config, init_submodules)
-def install():
-    link()
-
-    if sys.platform == 'darwin':
-        install_homebrew()
-
-    enable_zsh()
-    setup_vim()
-    install_iterm_themes()
-    install_python_essentials()
+    ctx.run('git submodule update --init --recursive')
 
 
 @task(read_config)
-def uninstall():
-    unlink()
+def link(ctx):
+    description('Creating symlinks...')
+    link_op()
+    end()
+
+
+@task(read_config)
+def unlink(ctx):
+    description('Removing symlinks...')
+    link_op(create=False)
+    end()
 
 
 @task
-def update():
-    description('Updating')
-    update_homebrew()
-    update_vim_plugins()
-
-
-@task
-def install_homebrew():
-    if run('which brew', warn=True, hide=True).failed:
-        description('Installing homebrew')
-        url = 'https://raw.githubusercontent.com/Homebrew/install/master/install'
-        run('ruby -e "$(curl -fsSL %s)"' % url)
-
-    update_homebrew()
-    install_brews()
-
-
-@task
-def update_homebrew():
+def update_homebrew(ctx):
     description('Instaling/updating homebrew packages')
-    run('brew update', warn=True)
-    run('brew upgrade', warn=True)
+    ctx.run('brew update', warn=True)
+    ctx.run('brew upgrade', warn=True)
 
 
 @task(read_config)
-def install_brews():
+def install_brews(ctx):
     info('Tapping...')
     for tap in CONFIG.get('taps', []):
         op('Tap %s' % tap)
-        run('brew tap %s' % tap, hide='both')
+        ctx.run('brew tap %s' % tap, hide='both')
 
     info('Installings brews...')
     for brew in CONFIG.get('formulas', []):
         op('Install %s' % brew)
-        run('brew install %s' % brew, hide='both', warn=True)
+        ctx.run('brew install %s' % brew, hide='both', warn=True)
 
     info('Installings casks...')
     for cask in CONFIG.get('casks', []):
         op('Install %s' % cask)
-        run('brew cask install %s' % cask, hide='both')
+        ctx.run('brew cask install %s' % cask, hide='both')
     end()
 
 
+@task(post=[update_homebrew, install_brews])
+def install_homebrew(ctx):
+    if ctx.run('which brew', warn=True, hide=True).failed:
+        description('Installing homebrew')
+        url = 'https://raw.githubusercontent.com/Homebrew/install/master/install'
+        ctx.run('ruby -e "$(curl -fsSL %s)"' % url)
+
+
 @task
-def setup_vim():
+def setup_vim(ctx):
     description('Setting up vim')
-    install_vimplug()
-    install_vim_plugins()
+    install_vimplug(ctx)
+    install_vim_plugins(ctx)
     end()
 
 
-def install_vimplug():
+def install_vimplug(ctx):
     info('Installing vim plugin manager')
-    run('curl -sfLo ~/.config/nvim/autoload/plug.vim --create-dirs '
-        'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    ctx.run('curl -sfLo ~/.config/nvim/autoload/plug.vim --create-dirs '
+            'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 
 
-def install_vim_plugins():
+def install_vim_plugins(ctx):
     info('Installing vim plugins')
-    run('nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugInstall +qa', pty=True)
+    ctx.run('nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugInstall +qa', pty=True)
 
 
 @task
-def update_vim_plugins():
+def update_vim_plugins(ctx):
     info('Updating vim plugins')
-    run('nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugUpdate +PlugUpgrade +qa', pty=True)
+    ctx.run(
+        'nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugUpdate +PlugUpgrade +qa', pty=True)
     end()
 
 
 @task
-def enable_zsh():
+def enable_zsh(ctx):
     description('Setup zsh')
     if 'zsh' in os.environ['SHELL']:
         info('zsh is already configured as default shell')
@@ -128,16 +115,16 @@ def enable_zsh():
     if os.path.exists('/usr/local/bin/zsh'):
         with open('/private/etc/shells') as fp:
             if '/usr/local/bin/zsh' not in fp.readlines():
-                run('echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells')
+                ctx.run('echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells')
 
-        run('chsh -s /usr/local/bin/zsh')
+        ctx.run('chsh -s /usr/local/bin/zsh')
     else:
-        run('chsh -s /bin/zsh')
+        ctx.run('chsh -s /bin/zsh')
     end()
 
 
 @task
-def install_iterm_themes():
+def install_iterm_themes(ctx):
     description('Installing iterm themes')
 
     tool = '/usr/libexec/PlistBuddy -c'
@@ -148,17 +135,34 @@ def install_iterm_themes():
         entry = ":'Custom Color Presets':'{}'".format(theme_name)
 
         info('Adding %s' % theme_name)
-        if run('{} "Add {} dict" "{}"'.format(tool, entry, plist), warn=True).ok:
-            run('{} "Merge \'{}\' {}" "{}"'.format(tool, file_path, entry, plist))
+        if ctx.run('{} "Add {} dict" "{}"'.format(tool, entry, plist), warn=True).ok:
+            ctx.run('{} "Merge \'{}\' {}" "{}"'.format(tool, file_path, entry, plist))
     end()
 
 
 @task
-def install_python_essentials():
+def install_python_essentials(ctx):
     description('Install essential python tools')
     packages = ['neovim']
     for package in packages:
-        run('pip install %s' % package)
+        ctx.run('pip install %s' % package)
+
+
+@task(pre=[read_config, init_submodules, link],
+      post=[enable_zsh, setup_vim, install_iterm_themes, install_python_essentials])
+def install(ctx):
+    if sys.platform == 'darwin':
+        install_homebrew(ctx)
+
+
+@task(read_config, unlink)
+def uninstall(ctx):
+    pass
+
+
+@task(post=[update_homebrew, update_vim_plugins])
+def update(ctx):
+    description('Updating')
 
 
 def isdirname(path):
@@ -209,20 +213,6 @@ def expand_targets(target, source_glob):
     return expanded
 
 
-@task(read_config)
-def link():
-    description('Creating symlinks...')
-    link_op()
-    end()
-
-
-@task(read_config)
-def unlink():
-    description('Removing symlinks...')
-    link_op(create=False)
-    end()
-
-
 def link_op(create=True):
     symlinks = CONFIG.get('symlinks', {})
     for source_glob, target in symlinks.items():
@@ -238,19 +228,19 @@ def link_op(create=True):
 
 
 def description(message):
-    print(" ===> %s" % message)
+    print(" ==> %s" % message)
 
 
 def info(message):
-    print(" ---> %s" % message)
+    print(" --> %s" % message)
 
 
 def error(message):
-    print(" #### %s" % message)
+    print(" ### %s" % message)
 
 
 def op(message):
-    print("   -> %s" % message)
+    print("  -> %s" % message)
 
 
 def end():

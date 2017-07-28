@@ -12,7 +12,7 @@ Afterwards it's basically
 $ pip install invoke
 $ git clone git@github.com:mdomke/dots.git .dots
 $ cd .dots
-$ invoke install
+$ inv install
 ```
 
 and you're done.

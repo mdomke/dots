@@ -36,6 +36,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
 Plug 'dag/vim-fish'
 Plug 'ElmCast/elm-vim', { 'for': 'elm'}
+Plug 'kylef/apiblueprint.vim'
 
 " Python
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }

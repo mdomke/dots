@@ -127,3 +127,7 @@ alias drm='docker rm -v $(docker ps -aq -f status=exited)'
 alias drmi='docker rmi $(docker images -f "dangling=true" -q)'
 
 alias ci="fly -t ci"
+alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt -i inventory'
+
+alias lint="tox -e flake8 --"
+alias t="tox -e py27 --"

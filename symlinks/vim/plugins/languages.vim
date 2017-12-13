@@ -32,7 +32,8 @@ Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 " Other
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'jtratner/vim-flavored-markdown'
+" Plug 'jtratner/vim-flavored-markdown'
+Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
 Plug 'dag/vim-fish'
 Plug 'ElmCast/elm-vim', { 'for': 'elm'}
 

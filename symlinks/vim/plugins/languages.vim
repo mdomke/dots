@@ -18,6 +18,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
+Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'yarn global add tern' }
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'}

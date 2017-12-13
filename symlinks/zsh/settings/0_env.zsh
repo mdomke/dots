@@ -5,7 +5,8 @@ export VISUAL="nvim"
 
 export GOPATH="$HOME/Source/play/go"
 export HSPATH="$HOME/.cabal/bin"
+export RUBY_PATH="$(brew --cellar)/ruby/2.4.2_1/bin"
 export TEXBINDIR="/Library/TeX/texbin"
 export PYENV_ROOT="/usr/local/var/pyenv"
 
-export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:$HSPATH:$GOPATH/bin:$TEXBINDIR:$HOME/kube-solo/bin:$PYENV_ROOT/bin"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:$HSPATH:$GOPATH/bin:$RUBY_PATH:$TEXBINDIR:$PYENV_ROOT/bin:/usr/local/opt/gettext/bin"

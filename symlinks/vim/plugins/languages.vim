@@ -1,6 +1,7 @@
 " Syntax 
 " Plug 'scrooloose/syntastic'
-" Plug 'valloric/youcompleteme', { 'for': ['python', 'c', 'cpp', 'go', 'rust'], 'do': './install.py --clang-completer --gocode-completer --racer-completer' }
+Plug 'valloric/youcompleteme', { 'for': ['c', 'cpp', 'go', 'rust', 'javascript'], 'do': './install.py --clang-completer --gocode-completer --racer-completer --js-completer' }
+" Plug 'w0rp/ale'
 Plug 'neomake/neomake'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
@@ -18,7 +19,9 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
-Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'yarn global add tern' }
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript' , 'do': 'npm i -g tern'}
+Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'npm i -g tern' }
+Plug 'moll/vim-node', { 'for': 'JavaScript' }
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'}
@@ -45,3 +48,5 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
 
 Plug 'luan/vim-concourse'
+
+Plug 'chr4/nginx.vim'

@@ -129,7 +129,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [apply]
   whitespace = nowarn
@@ -157,8 +157,8 @@
   path = .gitconfig.user
 
 [user]
-  name =
-  email =
+	name = Martin Domke
+	email = mail@martindomke.net
 
 [filter "media"]
   clean = git-media-clean %f
@@ -169,3 +169,8 @@
 	keepremote = yes
 [gitflow "hotfix.finish"]
 	keepremote = yes
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

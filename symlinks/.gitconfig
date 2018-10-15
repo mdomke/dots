@@ -160,10 +160,6 @@
 [include]
   path = .gitconfig.user
 
-[user]
-	name = Martin Domke
-	email = mail@martindomke.net
-
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f

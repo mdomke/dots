@@ -145,6 +145,9 @@
 [pull]
   rebase = true
 
+[commit]
+  gpgsign = true
+
 [core]
   autocrlf = false
 	excludesfile = /Users/mdomke/.gitignore

@@ -49,9 +49,24 @@ cryptpw() {
   python -c "import bcrypt; print bcrypt.hashpw('$1', bcrypt.gensalt())"
 }
 
-tunnel-kube1() {
-  host=${1:-coreos.master}
-	ssh -M -S /tmp/tunnel-kube1 -fnNT -L 9090:localhost:8080 ${host}
-	vared -p 'Tunnel is open (enter to stop)' -c tmp
-	ssh -S /tmp/tunnel-kube1 -O exit kube1.master
+
+tun() {
+  if [[ $# < 2 || $# > 3 ]]
+  then
+    echo "Usage: tun <host> <hostport> [<port>]"
+    return 1
+  fi
+  local host="$1"
+  local hostport="$2"
+  local port=${3:-$hostport}
+  ssh -L ${port}:localhost:${hostport} ${host}
+}
+
+caculate_path () {
+  hash=$(echo -n $1 | md5)
+  first=${hash:30:2}
+  second=${hash:28:2}
+  vault="$1.sqlcipher"
+  dst_path="/data/vaults/$first/$second/$vault"
+  echo $dst_path
 }

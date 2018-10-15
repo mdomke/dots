@@ -39,7 +39,6 @@ alias ve='vim ~/.config/nvim/init.vim'
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
-
 # Git Aliases
 alias gpl='git pull'
 alias gcp='git cp'
@@ -94,7 +93,7 @@ local grc="/usr/local/bin/grc -es --colour=auto"
 alias ping="${grc} ping"
 alias dig="${grc} dig"
 alias ifconfig="${grc} ifconfig"
-alias traceroute="${grc} ifconfig"
+alias traceroute="${grc} traceroute"
 
 # Python
 alias py2="python2"
@@ -102,19 +101,6 @@ alias py3="python3"
 alias py-build="python setup.py bdist_wheel"
 alias pipup="pip list -o | cut -f 1 -d ' ' | xargs pip install -U"
 alias repl="ipython"
-
-
-# Pyenv
-alias pec="pyenv virtualenv"
-alias pea="pyenv activate"
-alias ped="pyenv deactivate"
-alias per="pyenv rehash"
-
-# virtualbox
-alias vbm="VBoxManage"
-alias vbls="vbm list runningvms"
-alias vblsa="vbm list vms"
-alias vbs="vbm startvm --type headless"
 
 # itermocil
 alias it="itermocil"
@@ -128,6 +114,8 @@ alias drmi='docker rmi $(docker images -f "dangling=true" -q)'
 
 alias ci="fly -t ci"
 alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt -i inventory'
+alias av='ansible-vault --vault-password-file=~/.vault_pass.txt'
+alias apd='ap plays/fapi_deploy_to_host.yml'
 
 alias lint="tox -e flake8 --"
 alias t="tox -e py27 --"

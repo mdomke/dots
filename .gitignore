@@ -4,3 +4,4 @@ tags
 *.temp
 *.pyc
 .netrwhist
+/symlinks/zsh/settings/private.zsh

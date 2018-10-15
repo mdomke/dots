@@ -6,15 +6,13 @@ source "${HOME}/.dots/zgen/zgen.zsh"
 
 if ! zgen saved;
 then
-  zgen prezto '*:*' case-sensitive 'no'
-  zgen prezto '*:*' color 'yes'
-  zgen prezto editor key-bindings 'vi'
-  zgen prezto prompt theme 'lambda'
-  zgen prezto gpg-agent ssh-support 'yes'
-  zgen prezto ssh-agent forwarding 'yes'
+  zgen prezto '*:*' case-sensitive no
+  zgen prezto '*:*' color yes
+  zgen prezto editor key-bindings vi
+  zgen prezto prompt theme lambda
+  zgen prezto gpg-agent ssh-support yes
+  zgen prezto ssh-agent forwarding yes
   zgen prezto ssh load identities figo id_rsa
-
-  zgen load Tarrasch/zsh-autoenv
 
   zgen prezto
   zgen prezto git

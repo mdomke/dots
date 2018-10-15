@@ -1,7 +1,6 @@
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'briandoll/change-inside-surroundings.vim'
-Plug 'godlygeek/tabular', { 'on': 'Tabularize'}
 Plug 'chrisbra/csv.vim'
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'tomtom/tcomment_vim'
@@ -20,6 +19,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
+
+Plug 'terryma/vim-expand-region'
 
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'

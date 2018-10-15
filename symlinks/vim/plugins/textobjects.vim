@@ -1,7 +1,5 @@
-Plug 'coderifous/textobj-word-column.vim'
+" Plug 'coderifous/textobj-word-column.vim'
 
-Plug 'austintaylor/vim-indentobject'
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'lucapette/vim-textobj-underscore'
 
 Plug 'kana/vim-textobj-user'

@@ -62,11 +62,22 @@ tun() {
   ssh -L ${port}:localhost:${hostport} ${host}
 }
 
-caculate_path () {
+calculate-path () {
   hash=$(echo -n $1 | md5)
   first=${hash:30:2}
   second=${hash:28:2}
   vault="$1.sqlcipher"
   dst_path="/data/vaults/$first/$second/$vault"
   echo $dst_path
+}
+
+1p() {
+  eval $(op signin my)
+}
+
+klogin() {
+  if ! 1p; then
+    return
+  fi
+  kubelogin --username martin.domke --password $(op get item --vault=dgcaxagtabbehm5oriwx27mk5i 4fjrrokpx5fydowek2z2ap6pme | jq -r '.details.fields[] | select(.designation=="password").value')
 }

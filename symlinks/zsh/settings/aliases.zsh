@@ -119,3 +119,5 @@ alias apd='ap plays/fapi_deploy_to_host.yml'
 
 alias lint="tox -e flake8 --"
 alias t="tox -e py27 --"
+
+alias k="kubectl"

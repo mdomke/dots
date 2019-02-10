@@ -1,12 +1,13 @@
-" Syntax 
+" Linter
 " Plug 'scrooloose/syntastic'
-Plug 'valloric/youcompleteme', { 'for': ['c', 'cpp', 'rust', 'javascript'], 'do': './install.py --clang-completer --gocode-completer --racer-completer --js-completer' }
 " Plug 'w0rp/ale'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 
+" Completion
+" Plug 'valloric/youcompleteme', { 'for': ['c', 'cpp', 'rust', 'javascript'], 'do': './install.py --clang-completer --gocode-completer --racer-completer --js-completer' }
+" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 " HTML/CSS/LESS
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -18,7 +19,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'mxw/vim-jsx', { 'for': 'javascript'}
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' , 'do': 'yarn global add tern'}
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'yarn global add tern' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
@@ -32,25 +32,24 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
-" Other
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+" Go
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
+
+" Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+
+" Other
 " Plug 'jtratner/vim-flavored-markdown'
 Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
 Plug 'dag/vim-fish'
 Plug 'ElmCast/elm-vim', { 'for': 'elm'}
-Plug 'kylef/apiblueprint.vim'
+Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
+Plug 'chr4/nginx.vim'
+Plug 'cespare/vim-toml'
 
 " Python
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-
-" Dockerfile
-Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
-
-Plug 'luan/vim-concourse'
-
-Plug 'chr4/nginx.vim'
-
-Plug 'cespare/vim-toml'
+Plug 'python-mode/python-mode', { 'for': 'python' }

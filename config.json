@@ -1,6 +1,6 @@
 {
   "formulas": [
-    "corutils",
+    "coreutils",
     "diff-so-fancy",
     "fasd",
     "fd",
@@ -28,10 +28,6 @@
   "taps": [
     "caskroom/cask",
     "caskroom/versions",
-    "homebrew/binary",
-    "homebrew/completions",
-    "homebrew/nginx",
-    "homebrew/versions",
     "neovim/neovim"
   ],
   "casks": [
@@ -51,8 +47,9 @@
     "zsh/settings/": "~/.zsettings",
     "zsh/themes/": "~/.zthemes",
     "vim/": "~/.config/nvim/",
-    "fonts/*": "~/Library/Fonts/",
-    "bin/*": "~/.bin/",
-    "adium/*.AdiumMessageStyle": "~/Library/Application Support/Adium 2.0/Message Styles/"
+    "bin/*": "~/.bin/"
+  },
+  "copy": {
+    "fonts/*": "~/Library/Fonts/"
   }
 }

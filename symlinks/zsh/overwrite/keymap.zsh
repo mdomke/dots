@@ -7,6 +7,7 @@ zle -N insert-last-command-output
 bindkey "^X^L" insert-last-command-output
 
 # emacs style
-bindkey '^r' history-incremental-search-backward
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+
+source ~/.fzf/shell/key-bindings.zsh

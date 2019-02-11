@@ -42,6 +42,13 @@ def unlink(ctx):
     end()
 
 
+@task(read_config)
+def copy(ctx):
+    description('Copying files...')
+    copy_op()
+    end()
+
+
 @task
 def update_homebrew(ctx):
     description('Instaling/updating homebrew packages')
@@ -143,13 +150,13 @@ def install_iterm_themes(ctx):
 @task
 def install_python_essentials(ctx):
     description('Install essential python tools')
-    packages = ['neovim']
+    packages = ['pynvim']
     for package in packages:
         ctx.run('pip install %s' % package)
 
 
 @task(pre=[read_config, init_submodules, link],
-      post=[enable_zsh, setup_vim, install_iterm_themes, install_python_essentials])
+      post=[enable_zsh, setup_vim, install_iterm_themes])
 def install(ctx):
     if sys.platform == 'darwin':
         install_homebrew(ctx)
@@ -214,17 +221,34 @@ def expand_targets(target, source_glob):
 
 
 def link_op(create=True):
-    symlinks = CONFIG.get('symlinks', {})
-    for source_glob, target in symlinks.items():
-        for source, expanded_target in expand_targets(target, source_glob):
-            src = collapseuser(source)
-            dst = collapseuser(expanded_target)
-            if create:
-                op('Symlink {} ==> {}'.format(src, dst))
-                run('ln -snf "%s" "%s"' % (source, expanded_target))
-            else:
-                op('Remove {}'.format(dst))
-                run('rm -f "%s"' % expanded_target)
+    if create:
+        def cmd(src, dst):
+            op('Symlink {} ==> {}'.format(collapseuser(src), collapseuser(dst)))
+            run('ln -snf "{}" "{}"'.format(src, dst))
+    else:
+        def cmd(src, dst):
+            op('Remove {}'.format(collapseuser(dst)))
+            run('rm -f "{}"'.format(dst))
+    apply('symlinks', cmd)
+
+
+def copy_op(create=True):
+    if create:
+        def cmd(src, dst):
+            op('Copy {} ==> {}'.format(collapseuser(src), collapseuser(dst)))
+            run('cp -f "{}" "{}"'.format(src, dst))
+    else:
+        def cmd(src, dst):
+            op('Remove {}'.format(collapseuser(dst)))
+            run('rm -f "{}"'.format(dst))
+    apply('copy', cmd)
+
+
+def apply(section, cmd):
+    mapping = CONFIG.get(section, {})
+    for source_glob, target in mapping.items():
+        for src, dst in expand_targets(target, source_glob):
+            cmd(src, dst)
 
 
 def description(message):

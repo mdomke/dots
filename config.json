@@ -1,22 +1,29 @@
 {
   "formulas": [
-    "python",
-    "python3",
-    "neovim",
-    "zsh",
-    "ctags",
-    "git",
-    "git-flow-avh",
-    "tmux",
-    "mr",
-    "grc",
+    "corutils",
+    "diff-so-fancy",
     "fasd",
-    "the_silver_searcher",
+    "fd",
+    "findutils",
+    "git",
+    "gnu-sed",
+    "grc",
+    "gunpg",
+    "htop",
     "httpie",
     "jq",
-    "thefuck",
-    "itermocil",
-    "gitignore"
+    "mr",
+    "neovim",
+    "pinentry-mac",
+    "python",
+    "python@2",
+    "ranger",
+    "rename",
+    "the_silver_searcher",
+    "tree",
+    "watch",
+    "wget",
+    "zsh"
   ],
   "taps": [
     "caskroom/cask",
@@ -25,21 +32,16 @@
     "homebrew/completions",
     "homebrew/nginx",
     "homebrew/versions",
-    "neovim/neovim",
-    "tomanthony/brews",
-    "karan/karan"
+    "neovim/neovim"
   ],
   "casks": [
-    "iterm2-beta",
-    "google-chrome-beta",
-    "karabiner-elements",
+    "iterm2",
     "spotify",
     "viscosity",
     "istat-menus",
     "1password",
     "launchbar",
-    "gpgtools",
-    "adium"
+    "gpgtools"
   ],
   "after-scrips": [
   ],

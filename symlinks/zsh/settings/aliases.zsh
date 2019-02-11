@@ -99,11 +99,7 @@ alias traceroute="${grc} traceroute"
 alias py2="python2"
 alias py3="python3"
 alias py-build="python setup.py bdist_wheel"
-alias pipup="pip list -o | cut -f 1 -d ' ' | xargs pip install -U"
 alias repl="ipython"
-
-# itermocil
-alias it="itermocil"
 
 # docker
 alias dcp="docker-compose"

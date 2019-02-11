@@ -1,7 +1,5 @@
 zmodload zsh/zprof
 
-fpath=("${HOME}/.zthemes" ${fpath})
-
 source "${HOME}/.dots/zgen/zgen.zsh"
 
 if ! zgen saved;
@@ -25,11 +23,13 @@ then
   zgen prezto syntax-highlighting
 
   zgen load "${HOME}/.zsettings"
+  zgen load "${HOME}/.zthemes"
+  zgen load "${HOME}/.dots/symlinks/zsh/completion"
+
+  zgen load johanhaleby/kubetail
+  zgen load wfxr/forgit
 
   zgen save
 fi
 
 for file (${HOME}/.dots/symlinks/zsh/overwrite/*.zsh) source $file
-
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -86,20 +86,11 @@ def install_homebrew(ctx):
 @task
 def setup_vim(ctx):
     description('Setting up vim')
-    install_vimplug(ctx)
-    install_vim_plugins(ctx)
+    info('Installing vim plugins')
+    ctx.run('nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugInstall +qa', pty=True)
     end()
 
 
-def install_vimplug(ctx):
-    info('Installing vim plugin manager')
-    ctx.run('curl -sfLo ~/.config/nvim/autoload/plug.vim --create-dirs '
-            'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
-
-
-def install_vim_plugins(ctx):
-    info('Installing vim plugins')
-    ctx.run('nvim --noplugin -u ~/.config/nvim/plugins.vim -N +PlugInstall +qa', pty=True)
 
 
 @task

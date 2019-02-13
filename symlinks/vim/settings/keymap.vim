@@ -56,9 +56,6 @@ vmap ,{ c{<C-R>"}<ESC>
 
 map ,` ysiw`
 
-" gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
-
 " Change inside various enclosures with ,,-" and ,,-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
@@ -68,6 +65,11 @@ nnoremap ,,( f(ci(
 nnoremap ,,) f)ci)
 nnoremap ,,[ f[ci[
 nnoremap ,,] f]ci]
+
+
+" Substitute with yanked text
+xnoremap <leader>p "_dP
+nnoremap S "_diwP
 
 "Go to last edit location with ,.
 nnoremap ,. '.
@@ -173,13 +175,6 @@ noremap ,hl :set hlsearch! hlsearch?<CR>
 " swap them: http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
-
-" ============================
-" Tabularize - alignment
-" ============================
-" Hit Cmd-Shift-A then type a character you want to align by
-nmap <c-t> :Tabularize /
-vmap <c-t> :Tabularize /
 
 " ============================
 " SplitJoin plugin

@@ -7,7 +7,6 @@ function prompt_lambda_precmd {
 
   # Get Git repository information.
   if (( $+functions[git-info] )); then
-    git-info on
     git-info
   fi
 
@@ -50,17 +49,18 @@ function prompt_lambda_setup {
     )
   fi
 
-  # git ●
+  # git ●⇡⇣⬆⬇
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:branch' format "%B${colors[7]}%b%f"
   zstyle ':prezto:module:git:info:commit' format ":${colors[8]}%.7c%f "
-  zstyle ':prezto:module:git:info:ahead' format "${colors[1]}⬆%f"
-  zstyle ':prezto:module:git:info:behind' format "${colors[1]}⬇%f"
+  zstyle ':prezto:module:git:info:ahead' format "${colors[1]}⇡%f"
+  zstyle ':prezto:module:git:info:behind' format "${colors[1]}⇣%f"
   zstyle ':prezto:module:git:info:added' format "${colors[5]}●%f"
   zstyle ':prezto:module:git:info:deleted' format "${colors[4]}●%f"
   zstyle ':prezto:module:git:info:modified' format "${colors[6]}●%f"
   zstyle ':prezto:module:git:info:untracked' format "${colors[1]}●%f"
-  zstyle ':prezto:module:git:info:keys' format 'rprompt' '%b%c%A%B%d%a%m%u'
+  zstyle ':prezto:module:git:info:stashed' format "${colors[3]}$%f"
+  zstyle ':prezto:module:git:info:keys' format 'rprompt' '%b%c%A%B%d%a%m%u%S'
 
   # python
   zstyle ':prezto:module:python:info:virtualenv' format "${colors[1]}[%v]%f"

@@ -15,7 +15,7 @@ alias -g G='| grep'
 alias -g P='| pbcopy'
 
 # Suffix aliases
-extensions=(py rb go rs js hs html css txt csv)
+extensions=(py rb go rs js hs vim html css txt csv)
 for ext in $extensions; do
   alias -s $ext=$EDITOR
 done

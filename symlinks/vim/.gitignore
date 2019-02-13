@@ -1,9 +1,3 @@
-tags
-*~
-*.swp
-.VimballRecord
-view
 plugged
 backups
-autoload
 sessions

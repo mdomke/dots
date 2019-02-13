@@ -4,9 +4,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-markology'
 
 """ Themes
-Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'junegunn/seoul256.vim'
+Plug 'romainl/Apprentice'
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'junegunn/seoul256.vim'
 " Plug 'skwp/vim-colors-solarized'
 " Plug 'morhetz/gruvbox'
 " Plug 'romainl/flattened'

@@ -1,22 +1,28 @@
 let g:lightline = {
-      \ 'colorscheme': 'apprentice',
-      \ 'active': {
-      \   'left': [ [ ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'lineinfo': "\ue0a1%3l:%-2v"
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
-      \   'filename': "LightLineFilename"
-      \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': "", 'right': "" },
-      \ 'subseparator': { 'left': "|", 'right': "|" }
-      \ }
+  \ 'colorscheme': 'apprentice',
+  \ 'active': {
+  \   'left':  [[], ['fugitive', 'readonly', 'filename', 'modified']]
+  \ },
+  \ 'inactive': {
+  \   'left':  [[], ['fugitive', 'readonly', 'filename', 'modified']],
+  \   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+  \ },
+  \ 'tabline': {
+  \   'right': [[]],
+  \ },
+  \ 'component': {
+  \   'lineinfo': "\ue0a1%3l:%-2v"
+  \ },
+  \ 'component_function': {
+  \   'fugitive': 'LightLineFugitive',
+  \   'filename': "LightLineFilename"
+  \ },
+  \ 'component_visible_condition': {
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \ },
+  \ 'separator': { 'left': "", 'right': "" },
+  \ 'subseparator': { 'left': "|", 'right': "|" }
+  \ }
 
 
 function! LightLineModified()

@@ -45,7 +45,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
 Plug 'dag/vim-fish'
 Plug 'ElmCast/elm-vim', { 'for': 'elm'}
-Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
+Plug 'honza/dockerfile.vim'
 Plug 'chr4/nginx.vim'
 Plug 'cespare/vim-toml'
 

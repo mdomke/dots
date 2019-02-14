@@ -6,3 +6,10 @@ set smartcase       " ...unless we type a capital
 
 set grepprg=ag
 let g:grep_cmd_opts = '--line-number --no-heading'
+
+" Type ,hl to toggle highlighting on/off, and show current value.
+noremap // :set hlsearch! hlsearch?<CR>
+
+let g:indexed_search_mappings = 0
+noremap <silent> <Plug>(slash-after) :<C-u>ShowSearchIndex<CR>
+xunmap <Plug>(slash-after)

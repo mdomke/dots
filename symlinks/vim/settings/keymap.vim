@@ -155,19 +155,6 @@ nnoremap <silent> ss <C-w>s
 nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
 nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 
-"Clear current search highlight by double tapping //
-nmap <silent> // :nohlsearch<CR>
-
-"(v)im (c)ommand - execute current line as a vim command
-nmap <silent> ,vc yy:<C-f>p<C-c><CR>
-
-"(v)im (r)eload
-nmap <silent> ,vr :so %<CR>
-
-
-" Type ,hl to toggle highlighting on/off, and show current value.
-noremap ,hl :set hlsearch! hlsearch?<CR>
-
 " These are very similar keys. Typing 'a will jump to the line in the current
 " file marked with ma. However, `a will jump to the line and column marked
 " with ma.  It’s more useful in any case I can imagine, but it’s located way
@@ -179,12 +166,13 @@ nnoremap ` '
 " ============================
 " SplitJoin plugin
 " ============================
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nnoremap gss :SplitjoinSplit<cr>
+nnoremap gsj :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
 
 " ,hp = html preview
 map <silent> ,hp :!open %<CR><CR>

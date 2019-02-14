@@ -28,3 +28,8 @@ nnoremap <silent> ,gm  :Gmerge<CR>
 nnoremap <silent> ,gpl :Gpull<CR>
 nnoremap <silent> ,gp  :Gpush<CR>
 nnoremap <silent> ,ga  :Gwrite<CR>
+
+" list revisions
+nnoremap <silent> ,gl  :GV<CR>
+" list revisions of current file
+nnoremap <silent> ,glf :GV!<CR>

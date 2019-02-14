@@ -13,6 +13,6 @@ forgit_log=fgl
 forgit_diff=fgd
 forgit_add=fga
 forgit_ignore=fgi
-forgit_restore=fgf
+forgit_restore=fgr
 forgit_clean=fgc
 forgit_stash_show=fgs

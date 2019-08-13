@@ -43,7 +43,6 @@ if has('persistent_undo')
 endif
 
 " ================ Indentation ======================
-
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -53,18 +52,15 @@ set expandtab
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
-
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
-
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
-
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
@@ -80,10 +76,14 @@ set wildignore+=*.png,*.jpg,*.gif
 set completeopt=menuone
 
 " ================ Scrolling ========================
-
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+set shortmess+=c
+set updatetime=300
+set signcolumn=yes
+
 
 " ================ Custom Settings ========================
 so ~/.config/nvim/settings.vim

@@ -19,5 +19,6 @@ Session.vim
 .ropeproject/
 .python-version
 .idea
+.vscode
 
 pylama.ini

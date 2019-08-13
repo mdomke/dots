@@ -1,6 +1,6 @@
 export FZF_COMPLETION_TRIGGER='##'
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS='--height 40% --reverse --inline-info'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --inline-info --preview-window="right:hidden" --preview "[[ $(file --mime {}) =~ binary ]] && hexyl {} || bat -n --color always {}" --bind="?:toggle-preview"'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 _fzf_compgen_path() {
@@ -13,13 +13,14 @@ _fzf_compgen_dir() {
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/mdomke/.fzf/bin* ]]; then
-  export PATH="$PATH:$HOME/.fzf/bin"
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
-source "$HOME/.fzf/shell/key-bindings.zsh"
+# ------------
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"

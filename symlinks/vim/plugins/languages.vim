@@ -6,8 +6,9 @@
 " Completion
 " Plug 'valloric/youcompleteme', { 'for': ['c', 'cpp', 'rust', 'javascript'], 'do': './install.py --clang-completer --gocode-completer --racer-completer --js-completer' }
 " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " HTML/CSS/LESS
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -34,7 +35,7 @@ Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
 " Go
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
-Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
+" Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -50,6 +51,6 @@ Plug 'chr4/nginx.vim'
 Plug 'cespare/vim-toml'
 
 " Python
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'python-mode/python-mode', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'python-mode/python-mode', { 'for': 'python' , 'branch': 'develop' }

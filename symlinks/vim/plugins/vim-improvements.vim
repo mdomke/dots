@@ -20,9 +20,9 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
 
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'tweekmonster/startuptime.vim', { 'on': [ 'StartupTime' ] }

@@ -49,3 +49,56 @@ klogin() {
   fi
   kubelogin --username martin.domke --password $(op get item --vault=dgcaxagtabbehm5oriwx27mk5i 4fjrrokpx5fydowek2z2ap6pme | jq -r '.details.fields[] | select(.designation=="password").value')
 }
+
+kxi() {
+	local pod=$(kubectl get pods | fzf | awk '{print $1}')
+	local containers=$(kubectl get pods "${pod}" -o jsonpath='{.spec.containers[*].name}')
+	local container=${containers}
+	if [[ $containers =~ ' ' ]]; then
+		container=$(echo "${containers}" | tr ' ' '\n' | fzf)
+	fi
+	echo "${pod}" - "${container}"
+	kubectl exec -it "${pod}" -c "${container}" -- "${@}"
+}
+
+kli() {
+	local pod=$(kubectl get pods | fzf | awk '{print $1}')
+	local containers=$(kubectl get pods "${pod}" -o jsonpath='{.spec.containers[*].name}')
+	local container=${containers}
+	if [[ $containers =~ ' ' ]]; then
+		container=$(echo "${containers}" | tr ' ' '\n' | fzf)
+	fi
+	echo "${pod}" - "${container}"
+	kubectl logs "${@}" "${pod}" -c "${container}"
+}
+
+klfi() {
+	kli -f --tail=10
+}
+
+kdi() {
+	local typ=${1:-"pods"}
+	local item=$(kubectl get "${typ}" | fzf | awk '{print $1}')
+	kubectl describe "${typ}" "${item}"
+}
+
+kcni() {
+	local ns=$(kubectl get namespace | fzf | awk '{print $1}')
+	local current=$(kubectl config current-context)
+	kubectl config set-context "${current}" --namespace="${ns}"
+}
+
+kclean() {
+  local ns=$(kubectl get sa default -o jsonpath='{.metadata.namespace}')
+  kubectl -n $ns delete deploy,statefulset,configmap,svc,etcd,jobs,po,pvc --all
+}
+
+vlogin() {
+  local environ=${1:-dev}
+  if [[ $environ = "dev" ]]; then
+    export VAULT_ADDR=https://31.13.184.15:8200
+  else
+    export VAULT_ADDR=https://31.13.184.51:8200
+  fi
+  vault login -method=ldap username=martin.domke
+}

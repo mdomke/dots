@@ -24,6 +24,8 @@ function prompt_lambda_setup {
 
   add-zsh-hook precmd prompt_lambda_precmd
 
+  zstyle ':prezto:module:prompt' managed 'yes'
+
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     colors=(

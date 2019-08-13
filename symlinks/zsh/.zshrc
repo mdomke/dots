@@ -27,10 +27,11 @@ then
   zgen load "${HOME}/.zthemes"
   zgen load "${HOME}/.dots/symlinks/zsh/completion"
 
-  zgen load johanhaleby/kubetail
   zgen load wfxr/forgit
-
   zgen save
 fi
 
 for file (${HOME}/.dots/symlinks/zsh/overwrite/*.zsh) source $file
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc

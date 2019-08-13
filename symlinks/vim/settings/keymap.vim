@@ -74,8 +74,8 @@ nnoremap S "_diwP
 "Go to last edit location with ,.
 nnoremap ,. '.
 
-"When typing a string, your quotes auto complete. Move past the quote
-"while still in insert mode by hitting Ctrl-a. Example:
+"When typing a string, your quotes auto complete. Move past the quote while
+"still in insert mode by hitting Ctrl-a. Example:
 "
 " type 'foo<c-a>
 "

@@ -15,7 +15,7 @@ alias -g G='| grep'
 alias -g P='| pbcopy'
 
 # Suffix aliases
-extensions=(py rb go rs js hs vim html css txt csv)
+extensions=(go rs js hs vim html css txt csv)
 for ext in $extensions; do
   alias -s $ext=$EDITOR
 done
@@ -98,5 +98,18 @@ alias apd='ap plays/fapi_deploy_to_host.yml'
 
 alias lint="tox -e flake8 --"
 alias t="tox -e py27 --"
+alias q="tox -e quick --"
 
 alias k="kubectl"
+alias ka='kubectl apply -f'
+alias kcc='kubectl config use-context'
+alias kd='kubectl describe'
+alias kg='kubectl get'
+alias kga='kubectl get pods,services,deployments,statefulsets'
+alias kgaw='watch -n1 -t kubectl get pods,services,deployments,statefulsets'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+alias kl='kubectl logs'
+alias klf='kubectl logs -f --tail=10'
+alias kpf='kubectl port-forward'
+alias kx='kubectl exec -it'

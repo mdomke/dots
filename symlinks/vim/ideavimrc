@@ -2,18 +2,20 @@ set ignorecase
 set smartcase
 set scrolloff=3
 set surround
+set multiple-cursors
+set commentary
 let mapleader = ","
 
 noremap 0 ^
 noremap Y y$
 
-nmap <leader>jd :action GotoDeclaration<CR>
+" nmap <leader>gd :action GotoDeclaration<CR>
 nmap <leader>p  :action Back<CR>
 nmap <leader>n  :action Foward<CR>
 nmap <leader>f  :action GotoFile<CR>
 nmap <leader>c  :action GotoClass<CR>
-nmap gcc :action CommentByLineComment<CR>
-vmap gc : action CommentByLineComment<CR>
+" nmap gcc :action CommentByLineComment<CR>
+" vmap gc : action CommentByLineComment<CR>
 
 
 nnoremap / :action Find<CR>

@@ -28,6 +28,7 @@ then
   zgen load "${HOME}/.dots/symlinks/zsh/completion"
 
   zgen load wfxr/forgit
+  zgen load jonmosco/kube-ps1
   zgen save
 fi
 

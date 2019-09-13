@@ -73,7 +73,7 @@ function prompt_lambda_setup {
 
   # PROMPT="${colors[1]}%f "
   PROMPT='${editor_info[keymap]} '
-  RPROMPT="${colors[1]}%2~%f "'$git_info[rprompt]'" "'$python_info[virtualenv]'""
+  RPROMPT="${colors[1]}%2~%f "'$git_info[rprompt]'" "'$python_info[virtualenv]'" "'$(kube_ps1)'""
 }
 
 prompt_lambda_setup "$@"

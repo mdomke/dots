@@ -15,7 +15,9 @@ let g:lightline = {
   \ },
   \ 'component_function': {
   \   'fugitive': 'LightLineFugitive',
-  \   'filename': "LightLineFilename"
+  \   'filename': "LightLineFilename",
+  \   'filetype': "LightLineFiletype",
+  \   'fileformat': "LightLineFileformat"
   \ },
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
@@ -24,16 +26,13 @@ let g:lightline = {
   \ 'subseparator': { 'left': "|", 'right': "|" }
   \ }
 
-
 function! LightLineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
-
 function! LightLineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '\ue0a2' : ''
 endfunction
-
 
 function! LightLineFugitive()
   if exists("*fugitive#head")
@@ -43,9 +42,16 @@ function! LightLineFugitive()
   return ''
 endfunction
 
-
 function! LightLineFilename()
   return  ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
         \ ('' != expand('%:t') ? pathshorten(expand('%')) : '[No Name]') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction

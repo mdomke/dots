@@ -23,7 +23,7 @@ command! -bang -nargs=* Rg
 
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -35,7 +35,38 @@ let g:fzf_colors =
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
+  \ 'pointer': ['fg', 'Constant'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header': ['fg', 'Comment'] }
+
+if has('nvim') && exists('&winblend') && &termguicolors
+  autocmd! FileType fzf
+  autocmd  FileType fzf set noshowmode noruler nonu
+
+  set winblend=10
+  hi link NormalFloat SignColumn
+  if exists('g:fzf_colors.bg')
+    call remove(g:fzf_colors, 'bg')
+  endif
+
+  if stridx($FZF_DEFAULT_OPTS, '--margin') == -1
+    let $FZF_DEFAULT_OPTS .= ' --margin=1,3'
+  endif
+  " let $FZF_DEFAULT_OPTS .= ' --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1'
+
+  function! FloatingFZF()
+    let width = float2nr(&columns * 0.8)
+    let height = float2nr(&lines * 0.6)
+    let opts = { 'relative': 'editor',
+               \ 'row':      (&lines - height) / 2,
+               \ 'col':      (&columns - width) / 2,
+               \ 'width':    width,
+               \ 'height':   height,
+               \ 'style':    'minimal' }
+
+    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+  endfunction
+
+  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+endif

@@ -10,6 +10,8 @@
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'sheerun/vim-polyglot'
+
 " HTML/CSS/LESS
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'skwp/vim-html-escape', { 'for': 'html' }

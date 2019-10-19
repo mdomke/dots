@@ -12,3 +12,8 @@ Plug 'romainl/Apprentice'
 " Plug 'romainl/flattened'
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'chriskempson/base16-vim'
+" Plug 'nightsense/snow'
+" Plug 'ajmwagar/vim-deus'
+" Plug 'joshdick/onedark.vim'
+
+Plug 'ryanoasis/vim-devicons'

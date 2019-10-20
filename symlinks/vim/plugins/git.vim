@@ -2,4 +2,5 @@
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'

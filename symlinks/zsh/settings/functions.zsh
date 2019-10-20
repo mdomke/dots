@@ -43,11 +43,8 @@ calculate-path () {
   eval $(op signin my)
 }
 
-klogin() {
-  if ! 1p; then
-    return
-  fi
-  kubelogin --username martin.domke --password $(op get item --vault=dgcaxagtabbehm5oriwx27mk5i 4fjrrokpx5fydowek2z2ap6pme | jq -r '.details.fields[] | select(.designation=="password").value')
+sail() {
+  kubectl config use-context $1
 }
 
 kxi() {
@@ -91,14 +88,4 @@ kcni() {
 kclean() {
   local ns=$(kubectl get sa default -o jsonpath='{.metadata.namespace}')
   kubectl -n $ns delete deploy,statefulset,configmap,svc,etcd,jobs,po,pvc --all
-}
-
-vlogin() {
-  local environ=${1:-dev}
-  if [[ $environ = "dev" ]]; then
-    export VAULT_ADDR=https://31.13.184.15:8200
-  else
-    export VAULT_ADDR=https://31.13.184.51:8200
-  fi
-  vault login -method=ldap username=martin.domke
 }

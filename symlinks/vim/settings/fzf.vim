@@ -2,12 +2,12 @@ let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_buffers_jump = 1
 
 " nnoremap <silent> ,f  :Files<CR>
-nnoremap <silent> ,f  :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
-nnoremap <silent> ,b  :Buffers<cr>
-nnoremap <silent> ,gf :GitFiles?<cr>
-nnoremap <silent> ,ag :Ag<cr>
-nnoremap <silent> ,rg :Rg<cr>
-nnoremap <silent> ,h  :History:<cr>
+nnoremap <silent> <Leader>f  :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
+nnoremap <silent> <Leader>b  :Buffers<cr>
+nnoremap <silent> <Leader>gf :GitFiles?<cr>
+nnoremap <silent> <Leader>ag :Ag<cr>
+nnoremap <silent> <Leader>rg :Rg<cr>
+nnoremap <silent> <Leader>h  :History:<cr>
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,

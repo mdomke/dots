@@ -22,57 +22,50 @@ nnoremap Y y$
 nnoremap 0 ^
 nnoremap ^ 0
 
+" Surround shortcuts
+map  <Leader># ysiw#
+vmap <Leader># c#{<C-R>"}<ESC>
 
-" ,# Surround a word with #{ruby interpolation}
-map ,# ysiw#
-vmap ,# c#{<C-R>"}<ESC>
+map  <Leader>" ysiw"
+vmap <Leader>" c"<C-R>""<ESC>
 
-" ," Surround a word with "quotes"
-map ," ysiw"
-vmap ," c"<C-R>""<ESC>
+map  <Leader>' ysiw'
+vmap <Leader>' c'<C-R>"'<ESC>
 
-" ,' Surround a word with 'single quotes'
-map ,' ysiw'
-vmap ,' c'<C-R>"'<ESC>
+map  <Leader>( ysiw(
+map  <Leader>) ysiw)
+vmap <Leader>( c( <C-R>" )<ESC>
+vmap <Leader>) c(<C-R>")<ESC>
 
-" ,) or ,( Surround a word with (parens)
-" The difference is in whether a space is put in
-map ,( ysiw(
-map ,) ysiw)
-vmap ,( c( <C-R>" )<ESC>
-vmap ,) c(<C-R>")<ESC>
+map  <Leader>] ysiw]
+map  <Leader>[ ysiw[
+vmap <Leader>] c[ <C-R>" ]<ESC>
+vmap <Leader>[ c[<C-R>"]<ESC>
 
-" ,[ Surround a word with [brackets]
-map ,] ysiw]
-map ,[ ysiw[
-vmap ,[ c[ <C-R>" ]<ESC>
-vmap ,] c[<C-R>"]<ESC>
+map  <Leader>} ysiw}
+map  <Leader>{ ysiw{
+vmap <Leader>} c{ <C-R>" }<ESC>
+vmap <Leader>{ c{<C-R>"}<ESC>
 
-" ,{ Surround a word with {braces}
-map ,} ysiw}
-map ,{ ysiw{
-vmap ,} c{ <C-R>" }<ESC>
-vmap ,{ c{<C-R>"}<ESC>
-
-map ,` ysiw`
+map  <Leader>` ysiw`
 
 " Change inside various enclosures with ,,-" and ,,-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
-nnoremap ,,' f'ci'
-nnoremap ,," f"ci"
-nnoremap ,,( f(ci(
-nnoremap ,,) f)ci)
-nnoremap ,,[ f[ci[
-nnoremap ,,] f]ci]
+nnoremap <Leader><Leader>' f'ci'
+nnoremap <Leader><Leader>" f"ci"
+nnoremap <Leader><Leader>( f(ci(
+nnoremap <Leader><Leader>) f)ci)
+nnoremap <Leader><Leader>[ f[ci[
+nnoremap <Leader><Leader>] f]ci]
 
 
 " Substitute with yanked text
-xnoremap <leader>p "_dP
+xnoremap <Leader>p "_dP
 nnoremap S "_diwP
 
 "Go to last edit location with ,.
-nnoremap ,. '.
+nnoremap <Leader>. '.
 
 "When typing a string, your quotes auto complete. Move past the quote while
 "still in insert mode by hitting Ctrl-a. Example:
@@ -83,68 +76,41 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-A> <ESC>la
 
+" NERD tree
+nmap <Leader>< :NERDTreeToggle<CR>
 
-" ==== NERD tree
-" Cmd-Shift-N for nerd tree
-nmap ,< :NERDTreeToggle<CR>
+" Quickfix window
+nmap <silent> <Leader>qc :cclose<CR>
+nmap <silent> <Leader>qo :cwindow<CR>
+nmap <Leader>ql :cl<CR>
+nmap <Leader>qn :cne<CR>
+nmap <Leader>qp :cp<CR>
 
-" ,q to toggle quickfix window (where you have stuff like Ag)
-" ,oq to open it back up (rare)
-nmap <silent> ,qc :cclose<CR>
-nmap <silent> ,qo :cwindow<CR>
+" Location list
+nmap <silent> <Leader>lc :lclose<CR>
+nmap <silent> <Leader>lo :lwindow<CR>
+nmap <Leader>ll :ll<CR>
+nmap <Leader>ln :lne<CR>
+nmap <Leader>lp :lp<CR>
 
-nmap ,ql :cl<CR>
-nmap ,qn :cne<CR>
-nmap ,qp :cp<CR>
-
-
-nmap <silent> ,lc :lclose<CR>
-nmap <silent> ,lo :lwindow<CR>
-
-nmap ,ll :ll<CR>
-nmap ,ln :lne<CR>
-nmap ,lp :lp<CR>
-
-
-"Move back and forth through previous and next buffers
-nnoremap <silent> ,x :bp<CR>
-nnoremap <silent> ,n :bn<CR>
+" Buffer movements
+nnoremap <silent> <Leader>x :bp<CR>
+nnoremap <silent> <Leader>n :bn<CR>
 
 " ==============================
 " Window/Tab/Split Manipulation
 " ==============================
-" Move between split windows by using the four directions H, L, I, N
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-K> <C-W>k
 nnoremap <C-J> <C-W>j
 
-" Make gf (go to file) create the file, if not existent
-nnoremap gf :e<cfile><CR>
-nnoremap <C-w>f :sp +e<cfile><CR>
-nnoremap <C-w>gf :tabe<cfile><CR>
-
 " Zoom in and out of current window with ,gz
 map <silent> ,z <C-w>o
 
-
-" Create window splits easier. The default
-" way is Ctrl-w,v and Ctrl-w,s. I remap
-" this to vv and ss
+" Vertical/horizontal splits
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
-
-" Resize windows with arrow keys
-"nnoremap <Up> <C-w>+
-"nnoremap <Down> <C-w>-
-"nnoremap <Left> <C-w><
-"nnoremap <Right>  <C-w>>
-
-" create <%= foo %> erb tags using Ctrl-k in edit mode
-" imap <silent> <C-K> <%=   %><Esc>3hi
-
-" create <%= foo %> erb tags using Ctrl-j in edit mode
-" imap <silent> <C-J> <%  %><Esc>2hi
 
 " ============================
 " Shortcuts for everyday tasks
@@ -152,16 +118,8 @@ nnoremap <silent> ss <C-w>s
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
-nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
-nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
-
-" These are very similar keys. Typing 'a will jump to the line in the current
-" file marked with ma. However, `a will jump to the line and column marked
-" with ma.  It’s more useful in any case I can imagine, but it’s located way
-" off in the corner of the keyboard. The best way to handle this is just to
-" swap them: http://items.sjbach.com/319/configuring-vim-right
-nnoremap ' `
-nnoremap ` '
+nnoremap <silent> <Leader>cf :let @* = expand("%:~")<CR>
+nnoremap <silent> <Leader>cn :let @* = expand("%:t")<CR>
 
 " ============================
 " SplitJoin plugin
@@ -171,11 +129,8 @@ let g:splitjoin_join_mapping = ''
 nnoremap gss :SplitjoinSplit<cr>
 nnoremap gsj :SplitjoinJoin<cr>
 
-" Get the current highlight group. Useful for then remapping the color
-map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
 " ,hp = html preview
-map <silent> ,hp :!open %<CR><CR>
+map <silent> <Leader>hp :!open %<CR><CR>
 
 " insert current date
-map <silent> ,cd :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+map <silent> <Leader>cd :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>

@@ -56,10 +56,13 @@ let g:tagbar_type_haskell = {
     \ }
 
 
-nnoremap <silent> <leader>hh :Hoogle<cr>
-nnoremap          <leader>hH :Hoogle
-nnoremap <silent> <leader>hi :HoogleInfo<cr>
-nnoremap <silent> <leader>hc :HoogleClose<cr>
+augroup haskell
+  autocmd!
+  au FileType haskell nnoremap <silent> <leader>hh :Hoogle<cr>
+  au FileType haskell nnoremap          <leader>hH :Hoogle
+  au FileType haskell nnoremap <silent> <leader>hi :HoogleInfo<cr>
+  au FileType haskell nnoremap <silent> <leader>hc :HoogleClose<cr>
 
-nmap     <silent> <leader>ht :GhcModeType<cr>
-nmap     <silent> <leader>hl :Neomake hlint<cr>
+  au FileType haskell nmap     <silent> <leader>ht :GhcModeType<cr>
+  au FileType haskell nmap     <silent> <leader>hl :Neomake hlint<cr>
+augroup END

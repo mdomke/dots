@@ -15,21 +15,25 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " fugitive.git
 " ========================================
 " For fugitive.git, dp means :diffput. Define dg to mean :diffget
-nnoremap <silent> ,dg  :diffget<CR>
-nnoremap <silent> ,dgt :diffget //2<CR>
-nnoremap <silent> ,dgm :diffget //3<CR>
-nnoremap <silent> ,dp  :diffput<CR>
-nnoremap <silent> ,du  :diffupdate<CR>
+nnoremap <silent> <Leader>dg  :diffget<CR>
+nnoremap <silent> <Leader>dgt :diffget //2<CR>
+nnoremap <silent> <Leader>dgm :diffget //3<CR>
+nnoremap <silent> <Leader>dp  :diffput<CR>
+nnoremap <silent> <Leader>du  :diffupdate<CR>
 
-nnoremap <silent> ,gb  :Gblame<CR>
-nnoremap <silent> ,gs  :Gstatus<CR>
-nnoremap <silent> ,gc  :Gcommit --verbose<CR>
-nnoremap <silent> ,gm  :Gmerge<CR>
-nnoremap <silent> ,gpl :Gpull<CR>
-nnoremap <silent> ,gp  :Gpush<CR>
-nnoremap <silent> ,ga  :Gwrite<CR>
+nnoremap <silent> <Leader>gb  :Gblame<CR>
+nnoremap <silent> <Leader>gs  :Gstatus<CR>
+nnoremap <silent> <Leader>gc  :Gcommit --verbose<CR>
+nnoremap <silent> <Leader>gm  :Gmerge<CR>
+nnoremap <silent> <Leader>gpl :Gpull<CR>
+nnoremap <silent> <Leader>gp  :Gpush<CR>
+nnoremap <silent> <Leader>ga  :Gwrite<CR>
 
 " list revisions
-nnoremap <silent> ,gl  :GV<CR>
+nnoremap <silent> <Leader>gl  :GV<CR>
 " list revisions of current file
-nnoremap <silent> ,glf :GV!<CR>
+nnoremap <silent> <Leader>glf :GV!<CR>
+
+
+nmap <Leader>hn <Plug>(GitGutterNextHunk)
+nmap <Leader>hp <Plug>(GitGutterPrevHunk)

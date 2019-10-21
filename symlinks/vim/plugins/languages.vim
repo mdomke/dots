@@ -22,8 +22,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'mxw/vim-jsx', { 'for': 'javascript'}
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' , 'do': 'yarn global add tern'}
-Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'yarn global add tern' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 
 " Haskell
@@ -46,11 +44,11 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " Other
 " Plug 'jtratner/vim-flavored-markdown'
 Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
-Plug 'dag/vim-fish'
-Plug 'ElmCast/elm-vim', { 'for': 'elm'}
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'honza/dockerfile.vim'
-Plug 'chr4/nginx.vim'
-Plug 'cespare/vim-toml'
+Plug 'chr4/nginx.vim', { 'for': 'nginx' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 " Python
 " Plug 'davidhalter/jedi-vim', { 'for': 'python' }

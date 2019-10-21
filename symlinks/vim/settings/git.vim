@@ -34,6 +34,8 @@ nnoremap <silent> <Leader>gl  :GV<CR>
 " list revisions of current file
 nnoremap <silent> <Leader>glf :GV!<CR>
 
-
-nmap <Leader>hn <Plug>(GitGutterNextHunk)
-nmap <Leader>hp <Plug>(GitGutterPrevHunk)
+nmap ghn <Plug>(GitGutterNextHunk)
+nmap ghp <Plug>(GitGutterPrevHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghv <Plug>(GitGutterPreviewHunk)

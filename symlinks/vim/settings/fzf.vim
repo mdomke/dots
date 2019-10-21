@@ -1,7 +1,8 @@
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_buffers_jump = 1
 
-nnoremap <silent> ,f  :Files<CR>
+" nnoremap <silent> ,f  :Files<CR>
+nnoremap <silent> ,f  :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 nnoremap <silent> ,b  :Buffers<cr>
 nnoremap <silent> ,gf :GitFiles?<cr>
 nnoremap <silent> ,ag :Ag<cr>
@@ -30,7 +31,7 @@ let g:fzf_colors =
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'bg+':     ['bg', 'SignColumn', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],

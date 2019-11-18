@@ -53,4 +53,4 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 " Python
 " Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 " Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'python-mode/python-mode', { 'for': 'python' , 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'for': 'python' , 'branch': 'develop' }

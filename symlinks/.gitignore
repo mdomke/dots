@@ -20,5 +20,6 @@ Session.vim
 .python-version
 .idea
 .vscode
+.vim
 
 pylama.ini

@@ -40,7 +40,12 @@ calculate-path () {
 }
 
 1p() {
-  eval $(op signin my)
+  op list vaults &> /dev/null
+  if [[ $? -gt 0 ]]; then
+    eval $(op signin my)
+  fi
+  # local entry=$(op list items | jq -r '.[] | [.uuid, .overview.title] | join(":")' | fzf | cut -d: -f1)
+  # op get item $entry | jq -rj '.details.password' | pbcopy
 }
 
 sail() {

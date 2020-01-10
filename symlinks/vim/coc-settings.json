@@ -1,5 +1,4 @@
 {
-  "python.pythonPath": "/Users/mdomke/.virtualenvs/p2/bin/python",
   "python.jediEnabled": false,
   "python.linting.pylintEnabled": false,
   "python.linting.pylamaEnabled": false,

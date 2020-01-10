@@ -22,6 +22,15 @@ nnoremap Y y$
 nnoremap 0 ^
 nnoremap ^ 0
 
+" Brackets are not very reachable on a non-US keyboard layout so that we
+" remap them to pointy brackets. This is mostly for vim-unimpaired
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
+
 " Surround shortcuts
 map  <Leader># ysiw#
 vmap <Leader># c#{<C-R>"}<ESC>
@@ -124,10 +133,8 @@ nnoremap <silent> <Leader>cn :let @* = expand("%:t")<CR>
 " ============================
 " SplitJoin plugin
 " ============================
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-nnoremap gss :SplitjoinSplit<cr>
-nnoremap gsj :SplitjoinJoin<cr>
+let g:splitjoin_split_mapping = '<leader>sj'
+let g:splitjoin_join_mapping = '<leader>ss'
 
 " ,hp = html preview
 map <silent> <Leader>hp :!open %<CR><CR>

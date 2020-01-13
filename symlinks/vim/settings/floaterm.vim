@@ -1,4 +1,5 @@
-noremap <Leader>t :FloatermToggle<CR>i
+noremap <Leader>t :FloatermToggle<CR>
+let g:which_key_map.t = 'terminal'
 
 let g:floaterm_position = 'center'
 let g:floaterm_winblend = 10

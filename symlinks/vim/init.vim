@@ -28,6 +28,9 @@ if filereadable(expand("~/.config/nvim/plugins.vim"))
 endif
 
 " set shell=/bin/zsh
+set timeout
+set timeoutlen=500
+
 
 " ================ Turn Off Swap Files ==============
 set noswapfile

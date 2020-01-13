@@ -3,11 +3,16 @@ let g:fzf_buffers_jump = 1
 
 " nnoremap <silent> ,f  :Files<CR>
 nnoremap <silent> <Leader>f  :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
+let g:which_key_map.f = 'fzf-files'
+
 nnoremap <silent> <Leader>b  :Buffers<cr>
-nnoremap <silent> <Leader>gf :GitFiles?<cr>
+let g:which_key_map.b = 'fzf-buffers'
+
 nnoremap <silent> <Leader>ag :Ag<cr>
 nnoremap <silent> <Leader>rg :Rg<cr>
+
 nnoremap <silent> <Leader>h  :History:<cr>
+let g:which_key_map.h = 'fzf-history'
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -39,7 +44,7 @@ let g:fzf_colors =
   \ 'pointer': ['fg', 'Constant'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header': ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment'] }
 
 if has('nvim') && exists('&winblend') && &termguicolors
   autocmd! FileType fzf

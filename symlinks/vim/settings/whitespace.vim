@@ -12,4 +12,5 @@ function! s:StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
-nmap ,w :StripTrailingWhitespaces<CR>
+nmap <leader>w :StripTrailingWhitespaces<CR>
+let g:which_key_map.w = 'strip-whitespace'

@@ -1,17 +1,3 @@
-" ========================================
-" General vim sanity improvements
-" ========================================
-"
-"
-" alias yw to yank the entire word 'yank inner word'
-" even if the cursor is halfway inside the word
-" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap ,yw yiwvew
-
-" ,ow = 'overwrite word', replace a word with what's in the yank buffer
-" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap ,ow "_diwhp
-
 "make Y consistent with C and D
 nnoremap Y y$
 
@@ -34,47 +20,62 @@ xmap > ]
 " Surround shortcuts
 map  <Leader># ysiw#
 vmap <Leader># c#{<C-R>"}<ESC>
+let g:which_key_map['#'] = 'surround-#'
 
 map  <Leader>" ysiw"
 vmap <Leader>" c"<C-R>""<ESC>
+let g:which_key_map['"'] = 'surround-"'
 
 map  <Leader>' ysiw'
 vmap <Leader>' c'<C-R>"'<ESC>
+let g:which_key_map["'"] = "surround-'"
 
 map  <Leader>( ysiw(
-map  <Leader>) ysiw)
 vmap <Leader>( c( <C-R>" )<ESC>
+let g:which_key_map['('] = "surround-("
+
+map  <Leader>) ysiw)
 vmap <Leader>) c(<C-R>")<ESC>
+let g:which_key_map[')'] = "surround-)"
+
+map  <Leader>[ ysiw[
+vmap <Leader>[ c[<C-R>"]<ESC>
+let g:which_key_map['['] = "surround-["
 
 map  <Leader>] ysiw]
-map  <Leader>[ ysiw[
 vmap <Leader>] c[ <C-R>" ]<ESC>
-vmap <Leader>[ c[<C-R>"]<ESC>
+let g:which_key_map[']'] = "surround-]"
+
+map  <Leader>{ ysiw{
+vmap <Leader>{ c{<C-R>"}<ESC>
+let g:which_key_map['{'] = "surround-{"
 
 map  <Leader>} ysiw}
-map  <Leader>{ ysiw{
 vmap <Leader>} c{ <C-R>" }<ESC>
-vmap <Leader>{ c{<C-R>"}<ESC>
+let g:which_key_map['}'] = "surround-}"
 
 map  <Leader>` ysiw`
+let g:which_key_map['`'] = "surround-`"
 
-" Change inside various enclosures with ,,-" and ,,-'
-" The f makes it find the enclosure so you don't have
-" to be standing inside it
-nnoremap <Leader><Leader>' f'ci'
-nnoremap <Leader><Leader>" f"ci"
-nnoremap <Leader><Leader>( f(ci(
-nnoremap <Leader><Leader>) f)ci)
-nnoremap <Leader><Leader>[ f[ci[
-nnoremap <Leader><Leader>] f]ci]
+let g:which_key_map[','] = { 
+      \ 'name': '+change',
+      \ "'":    ["f'ci'",  "inside-'"],
+      \ '"':    ['f"ci"',  'inside-"'],
+      \ '(':    ['f(ci(',  'inside-('],
+      \ ')':    ['f)ci)',  'inside-)'],
+      \ '[':    ['f[ci[',  'inside-['],
+      \ ']':    ['f]ci]',  'inside-]'],
+      \ '{':    ['f{ci{',  'inside-{'],
+      \ '}':    ['f}ci}',  'inside-}'],
+      \ }
 
 
 " Substitute with yanked text
 xnoremap <Leader>p "_dP
 nnoremap S "_diwP
 
-"Go to last edit location with ,.
 nnoremap <Leader>. '.
+let g:which_key_map['.'] = 'last-edit-loc'
 
 "When typing a string, your quotes auto complete. Move past the quote while
 "still in insert mode by hitting Ctrl-a. Example:
@@ -87,24 +88,34 @@ imap <C-A> <ESC>la
 
 " NERD tree
 nmap <Leader>< :NERDTreeToggle<CR>
+let g:which_key_map['<'] = 'nerdtree-toggle'
 
 " Quickfix window
-nmap <silent> <Leader>qc :cclose<CR>
-nmap <silent> <Leader>qo :cwindow<CR>
-nmap <Leader>ql :cl<CR>
-nmap <Leader>qn :cne<CR>
-nmap <Leader>qp :cp<CR>
+let g:which_key_map.q = {
+      \ 'name': '+quickfix',
+      \ 'c':    ['cclose',  'close'],
+      \ 'o':    ['cwindow', 'open'],
+      \ 'l':    ['cl',      'list'],
+      \ 'n':    ['cne',     'next'],
+      \ 'p':    ['cp',      'previous'],
+      \}
 
 " Location list
-nmap <silent> <Leader>lc :lclose<CR>
-nmap <silent> <Leader>lo :lwindow<CR>
-nmap <Leader>ll :ll<CR>
-nmap <Leader>ln :lne<CR>
-nmap <Leader>lp :lp<CR>
+let g:which_key_map.l = {
+      \ 'name': '+location',
+      \ 'c':    ['lclose',  'close'],
+      \ 'o':    ['lwindow', 'open'],
+      \ 'l':    ['ll',      'list'],
+      \ 'n':    ['lne',     'next'],
+      \ 'p':    ['lp',      'previous'],
+      \}
 
 " Buffer movements
 nnoremap <silent> <Leader>x :bp<CR>
+let g:which_key_map.x = 'buffer-prev'
+
 nnoremap <silent> <Leader>n :bn<CR>
+let g:which_key_map.n = 'buffer-next'
 
 " ==============================
 " Window/Tab/Split Manipulation
@@ -114,9 +125,6 @@ nnoremap <C-L> <C-W>l
 nnoremap <C-K> <C-W>k
 nnoremap <C-J> <C-W>j
 
-" Zoom in and out of current window with ,gz
-map <silent> ,z <C-w>o
-
 " Vertical/horizontal splits
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
@@ -125,10 +133,16 @@ nnoremap <silent> ss <C-w>s
 " Shortcuts for everyday tasks
 " ============================
 
-" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
-" this is helpful to paste someone the path you're looking at
+let g:which_key_map.c = { 'name': '+current' }
+
 nnoremap <silent> <Leader>cf :let @* = expand("%:~")<CR>
+let g:which_key_map.c.f = 'copy-file-path'
+
 nnoremap <silent> <Leader>cn :let @* = expand("%:t")<CR>
+let g:which_key_map.c.n = 'copy-file-name'
+"
+map <silent> <Leader>cd :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+let g:which_key_map.c.d = 'date'
 
 " ============================
 " SplitJoin plugin
@@ -136,8 +150,9 @@ nnoremap <silent> <Leader>cn :let @* = expand("%:t")<CR>
 let g:splitjoin_split_mapping = '<leader>sj'
 let g:splitjoin_join_mapping = '<leader>ss'
 
-" ,hp = html preview
-map <silent> <Leader>hp :!open %<CR><CR>
+let g:which_key_map.s = { 'name': '+splitjoin' }
+let g:which_key_map.s.s = 'split'
+let g:which_key_map.s.j = 'join'
 
-" insert current date
-map <silent> <Leader>cd :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+nnoremap <silent> <leader> :<C-U>WhichKey ','<CR>
+vnoremap <silent> <leader> :<C-U>WhichKeyVisual ','<CR>

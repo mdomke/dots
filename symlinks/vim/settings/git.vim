@@ -12,27 +12,27 @@ autocmd User fugitive
 " fugitive buffers. This prevents this from becomming an issue:
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" fugitive.git
-" ========================================
-" For fugitive.git, dp means :diffput. Define dg to mean :diffget
-nnoremap <silent> <Leader>dg  :diffget<CR>
-nnoremap <silent> <Leader>dgt :diffget //2<CR>
-nnoremap <silent> <Leader>dgm :diffget //3<CR>
-nnoremap <silent> <Leader>dp  :diffput<CR>
-nnoremap <silent> <Leader>du  :diffupdate<CR>
+let g:which_key_map.d = {
+      \ 'name': '+diff',
+      \ 'g':    ['diffget',     'get'],
+      \ 'gt':   ['diffget //2', 'get-target'],
+      \ 'gm':   ['diffget //3', 'get-merge'],
+      \ 'p':    ['diffput',     'put'],
+      \ 'u':    ['diffupdate',  'updated'],
+      \}
 
-nnoremap <silent> <Leader>gb  :Gblame<CR>
-nnoremap <silent> <Leader>gs  :Gstatus<CR>
-nnoremap <silent> <Leader>gc  :Gcommit --verbose<CR>
-nnoremap <silent> <Leader>gm  :Gmerge<CR>
-nnoremap <silent> <Leader>gpl :Gpull<CR>
-nnoremap <silent> <Leader>gp  :Gpush<CR>
-nnoremap <silent> <Leader>ga  :Gwrite<CR>
-
-" list revisions
-nnoremap <silent> <Leader>gl  :GV<CR>
-" list revisions of current file
-nnoremap <silent> <Leader>glf :GV!<CR>
+let g:which_key_map.g = {
+      \ 'name': '+git',
+      \ 'b':    ['Gblame',            'blame'],
+      \ 's':    ['Gstatus',           'status'],
+      \ 'm':    ['Gmerge',            'merge'],
+      \ 'c':    ['Gcommit --verbose', 'commit'],
+      \ 'a':    ['Gwrite',            'add'],
+      \ 'p':    ['Gpush',             'push'],
+      \ 'pl':   ['Gpull',             'pull'],
+      \ 'l':    ['GV',                'history'],
+      \ 'lf':   ['GV!',               'history of file'],
+      \ }
 
 nmap ghn <Plug>(GitGutterNextHunk)
 nmap ghp <Plug>(GitGutterPrevHunk)

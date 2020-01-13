@@ -47,7 +47,6 @@ Plug 'rhysd/vim-gfm-syntax', { 'for': 'markdown' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'honza/dockerfile.vim'
-Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/csv.vim'
 

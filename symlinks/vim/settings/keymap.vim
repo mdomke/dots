@@ -9,13 +9,13 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " Brackets are not very reachable on a non-US keyboard layout so that we
-" remap them to pointy brackets. This is mostly for vim-unimpaired
-nmap < [
-nmap > ]
-omap < [
-omap > ]
-xmap < [
-xmap > ]
+" remap them to - and _. This is mostly for vim-unimpaired
+nmap - [
+nmap _ ]
+omap - [
+omap _ ]
+xmap - [
+xmap _ ]
 
 " Surround shortcuts
 map  <Leader># ysiw#

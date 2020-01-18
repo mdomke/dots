@@ -1,1 +1,1 @@
-eval "$(fasd --init auto)"
+source <(fasd --init auto)

@@ -85,7 +85,7 @@ alias py-build="python setup.py bdist_wheel"
 alias repl="ipython"
 alias mkvenv="pyenv virtualenv"
 alias workon="pyenv activate"
-alias deactivate="pyenv deactivate"
+# alias ="pyenv deactivate"
 
 # docker
 alias dcp="docker-compose"

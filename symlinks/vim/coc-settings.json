@@ -1,9 +1,13 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["python", "Markdown", "css", "json", "yaml"],
   "python.jediEnabled": false,
   "python.linting.pylintEnabled": false,
   "python.linting.pylamaEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
+  "python.formatting.blackPath": "/Users/mdomke/.local/bin/black",
+  "python.formatting.blackArgs": ["-l", "100"],
+  "python.formatting.provider": "black",
   "python.autoComplete.showAdvancedMembers": false,
   "languageserver": {
     "golang": {

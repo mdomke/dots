@@ -1,17 +1,18 @@
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_buffers_jump = 1
 
-" nnoremap <silent> ,f  :Files<CR>
-nnoremap <silent> <Leader>f  :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
+nnoremap <silent> <Leader>f  :Files<CR>
+" nnoremap <silent> <Leader>f  :call fzf#vim#files('.')<CR>
 let g:which_key_map.f = 'fzf-files'
 
-nnoremap <silent> <Leader>b  :Buffers<cr>
+nnoremap <silent> <Leader>b  :Buffers<CR>
 let g:which_key_map.b = 'fzf-buffers'
 
-nnoremap <silent> <Leader>ag :Ag<cr>
-nnoremap <silent> <Leader>rg :Rg<cr>
+nnoremap <silent> <Leader>ag :Ag<CR>
+nnoremap <silent> <Leader>rg :Rg<CR>
+nnoremap <silent> <Leader>rw :Rg <C-R><C-W><CR>
 
-nnoremap <silent> <Leader>h  :History:<cr>
+nnoremap <silent> <Leader>h  :History:<CR>
 let g:which_key_map.h = 'fzf-history'
 
 command! -bang -nargs=* Ag

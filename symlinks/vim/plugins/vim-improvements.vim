@@ -1,11 +1,11 @@
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'bkad/camelcasemotion'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'bogado/file-line'
 Plug 'sjl/gundo.vim'
-Plug 'gko/vim-coloresque'
+" Plug 'gko/vim-coloresque'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'liuchengxu/vim-which-key'
 
 Plug 'tpope/vim-abolish'
@@ -16,7 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'

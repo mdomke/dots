@@ -132,7 +132,6 @@ nnoremap <silent> ss <C-w>s
 " ============================
 " Shortcuts for everyday tasks
 " ============================
-
 let g:which_key_map.c = { 'name': '+current' }
 
 nnoremap <silent> <Leader>cf :let @* = expand("%:~")<CR>
@@ -143,16 +142,6 @@ let g:which_key_map.c.n = 'copy-file-name'
 "
 map <silent> <Leader>cd :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 let g:which_key_map.c.d = 'date'
-
-" ============================
-" SplitJoin plugin
-" ============================
-let g:splitjoin_split_mapping = '<leader>sj'
-let g:splitjoin_join_mapping = '<leader>ss'
-
-let g:which_key_map.s = { 'name': '+splitjoin' }
-let g:which_key_map.s.s = 'split'
-let g:which_key_map.s.j = 'join'
 
 nnoremap <silent> <leader> :<C-U>WhichKey ','<CR>
 vnoremap <silent> <leader> :<C-U>WhichKeyVisual ','<CR>

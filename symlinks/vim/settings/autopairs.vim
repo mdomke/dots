@@ -1,4 +1,4 @@
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '<C-p>'
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 let g:AutoPairsShortcutBackInsert = '<C-b>'

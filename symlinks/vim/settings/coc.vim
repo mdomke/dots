@@ -29,8 +29,8 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 command! -nargs=0 Format :call CocAction('format')
 "
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>

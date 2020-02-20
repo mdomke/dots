@@ -147,6 +147,7 @@
 
 [commit]
   gpgsign = true
+  verbose = true
 
 [core]
   autocrlf = false

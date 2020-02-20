@@ -64,18 +64,23 @@ kxi() {
 }
 
 kli() {
+  local opts="--tail 100"
 	local pod=$(kubectl get pods | fzf | awk '{print $1}')
-	local containers=$(kubectl get pods "${pod}" -o jsonpath='{.spec.containers[*].name}')
-	local container=${containers}
-	if [[ $containers =~ ' ' ]]; then
-		container=$(echo "${containers}" | tr ' ' '\n' | fzf)
-	fi
-	echo "${pod}" - "${container}"
-	kubectl logs "${@}" "${pod}" -c "${container}"
-}
+  if [[ -z $pod ]]; then
+    return
+  fi
 
-klfi() {
-	kli -f --tail=10
+  if [[ $1 == "-c" && -z $2 ]]; then
+    local container=$(kubectl get pods "${pod}" -o jsonpath='{.spec.containers[*].name}')
+    if [[ $container =~ " " ]]; then
+      container=$(echo "${container}" | tr " " "\n" | fzf)
+    fi
+    if [[ -n "$container" ]]; then
+      opts="$opts -c $container"
+    fi
+    shift 1;
+  fi
+  stern ${pod} ${=opts}
 }
 
 kdi() {
@@ -86,8 +91,11 @@ kdi() {
 
 kcni() {
 	local ns=$(kubectl get namespace | fzf | awk '{print $1}')
-	local current=$(kubectl config current-context)
-	kubectl config set-context "${current}" --namespace="${ns}"
+  kcn "${ns}"
+}
+
+kcn() {
+	kubectl config set-context --current --namespace="$1"
 }
 
 kclean() {

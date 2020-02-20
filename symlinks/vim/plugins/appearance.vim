@@ -1,5 +1,7 @@
 " Plug 'godlygeek/csapprox'
-Plug 'chrisbra/colorizer'
+" Plug 'chrisbra/colorizer'
+" Plug 'gko/vim-coloresque'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-markology'
 

@@ -33,7 +33,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_auto_sameids = 0
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_command = "golangci-lint run"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_enabled = ['govet', 'golint', 'errcheck', 'structcheck']
 let g:go_metalinter_autosave_enabled = []

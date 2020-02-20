@@ -9,6 +9,7 @@
   "python.formatting.blackArgs": ["-l", "100"],
   "python.formatting.provider": "black",
   "python.autoComplete.showAdvancedMembers": false,
+  "python.sortImports.path": "/Users/mdomke/.local/bin/isort",
   "languageserver": {
     "golang": {
       "command": "gopls",

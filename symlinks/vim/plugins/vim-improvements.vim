@@ -4,8 +4,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'bogado/file-line'
 Plug 'sjl/gundo.vim'
-" Plug 'gko/vim-coloresque'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'liuchengxu/vim-which-key'
 
 Plug 'tpope/vim-abolish'

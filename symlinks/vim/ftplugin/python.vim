@@ -15,4 +15,4 @@ fun! python#breakpoint(lnum)
   normal k
 endfun
 
-exe "nnoremap <silent> <buffer> " g:pymode_breakpoint_bind ":call python#breakpoint(line('.'))<CR>"
+exe "nnoremap <silent> <buffer> " g:python_breakpoint_bind ":call python#breakpoint(line('.'))<CR>"

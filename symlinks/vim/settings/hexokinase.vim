@@ -1,1 +1,1 @@
-let g:Hexokinase_highlighters = ['sign_column']
+let g:Hexokinase_highlighters = ['backgroundfull']

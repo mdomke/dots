@@ -21,6 +21,7 @@ function! s:check_back_space() abort
 endfunction
 
 command! -nargs=0 SortImports :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.py :SortImports
 
 nmap <leader>si :SortImports<CR>
 nmap <leader>rn <Plug>(coc-rename)

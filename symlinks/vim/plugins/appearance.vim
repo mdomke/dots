@@ -19,3 +19,4 @@ Plug 'romainl/Apprentice'
 " Plug 'joshdick/onedark.vim'
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'camspiers/lens.vim'

@@ -49,6 +49,7 @@ Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'honza/dockerfile.vim'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/csv.vim'
+Plug 'tsandall/vim-rego'
 
 " Python
 " Plug 'davidhalter/jedi-vim', { 'for': 'python' }

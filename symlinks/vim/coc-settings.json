@@ -8,7 +8,6 @@
   "java.completion.guessMethodArguments": true,
   "java.referencesCodeLens.enabled": true,
   "java.implementationsCodeLens.enabled": true,
-  "python.jediEnabled": false,
   "python.linting.pylintEnabled": false,
   "python.linting.pylamaEnabled": false,
   "python.linting.flake8Enabled": true,
@@ -16,13 +15,27 @@
   "python.formatting.blackPath": "/Users/mdomke/.local/bin/black",
   "python.formatting.blackArgs": ["-l", "100"],
   "python.formatting.provider": "black",
-  "python.autoComplete.showAdvancedMembers": false,
   "python.sortImports.path": "/Users/mdomke/.local/bin/isort",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.semicolons": "insert",
+  "typescript.suggest.paths": true,
+  "typescript.suggest.autoImports": true,
+  "yaml.format.enable": true,
+  "yaml.format.proseWrap": "always",
+  "yaml.hover": true,
+  "yaml.completion": true,
+  "yaml.schemas": {
+    "kubernetes": "templates/*.yaml"
+  },
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "clangd.path": "/Users/mdomke/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }

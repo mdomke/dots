@@ -2,12 +2,14 @@ let g:coc_global_extensions = [
       \ 'coc-emmet',
       \ 'coc-html',
       \ 'coc-json',
+      \ 'coc-yaml',
+      \ 'coc-tsserver',
+      \ 'coc-eslint',
       \ 'coc-prettier',
-      \ 'coc-python',
+      \ 'coc-pyright',
       \ 'coc-snippets',
       \ 'coc-vimlsp',
-      \ ]
-" Use tab for trigger completion with characters ahead and navigate.
+      \ ] " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -21,7 +23,6 @@ function! s:check_back_space() abort
 endfunction
 
 command! -nargs=0 SortImports :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd BufWritePre *.py :SortImports
 
 nmap <leader>si :SortImports<CR>
 nmap <leader>rn <Plug>(coc-rename)
@@ -64,8 +65,8 @@ augroup end
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-nmap <silent> <tab> <Plug>(coc-range-select)
-xmap <silent> <tab> <Plug>(coc-range-select)
+" nmap <silent> <tab> <Plug>(coc-range-select)
+" xmap <silent> <tab> <Plug>(coc-range-select)
 
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)

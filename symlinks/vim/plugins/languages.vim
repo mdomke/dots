@@ -18,7 +18,8 @@ Plug 'skwp/vim-html-escape', { 'for': 'html' }
 Plug 'mattn/emmet-vim', { 'for': 'html'}
 
 " JavaScript/CoffeScript
-Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'typescript'] }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript'}
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript'}
 Plug 'mxw/vim-jsx', { 'for': 'javascript'}
@@ -34,7 +35,7 @@ Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
 " Go
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Rust

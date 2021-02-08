@@ -145,3 +145,5 @@ let g:which_key_map.c.d = 'date'
 
 nnoremap <silent> <leader> :<C-U>WhichKey ','<CR>
 vnoremap <silent> <leader> :<C-U>WhichKeyVisual ','<CR>
+
+autocmd FileType vista,vista_kind nnoremap <buffer> <silent> / :<c-u>call vista#finder#fzf#Run()<CR>

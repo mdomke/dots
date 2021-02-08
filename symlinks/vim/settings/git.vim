@@ -15,8 +15,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 let g:which_key_map.d = {
       \ 'name': '+diff',
       \ 'g':    ['diffget',     'get'],
-      \ 'gt':   ['diffget //2', 'get-target'],
-      \ 'gm':   ['diffget //3', 'get-merge'],
+      \ 't':    ['diffget //2', 'get-target'],
+      \ 'm':    ['diffget //3', 'get-merge'],
       \ 'p':    ['diffput',     'put'],
       \ 'u':    ['diffupdate',  'updated'],
       \}

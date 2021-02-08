@@ -1,6 +1,2 @@
 export NVM_DIR="$HOME/.nvm"
-
-nvm() {
-  source "/usr/local/opt/nvm/nvm.sh"
-  nvm $@
-}
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

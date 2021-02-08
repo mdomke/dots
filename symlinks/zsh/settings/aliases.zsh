@@ -6,12 +6,12 @@ dots=$HOME/.dots
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
-alias -g C='| wc -l'
+# alias -g C='| wc -l'
 alias -g H='| head'
 alias -g L="| less"
 alias -g N="| /dev/null"
 alias -g S='| sort'
-alias -g G='| grep'
+# alias -g G='| grep'
 alias -g P='| pbcopy'
 
 # Suffix aliases
@@ -50,6 +50,7 @@ alias gtl='git tag -l -n1 | gsort -V'
 alias gtv='git tag -v'
 alias gpam='git push --tags && git push origin develop master'
 alias gtm='git merge $(git tag | egrep "\d+\.\d+\.\d+" | gsort -rV | head -n1)'
+alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 
 # Common shell functions
 alias less='less -r'
@@ -58,7 +59,6 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
-alias dog='pygmentize'
 
 # Zippin
 alias gz='tar -cvjf'
@@ -106,7 +106,7 @@ alias q="tox -e quick --"
 alias k="kubectl"
 alias ka='kubectl apply -f'
 alias kcc='kubectl config use-context'
-alias kd='kubectl describe'
+alias kv='kubectl describe'
 alias kg='kubectl get'
 alias kga='kubectl get pods,services,deployments,statefulsets'
 alias kgaw='watch -n1 -t kubectl get pods,services,deployments,statefulsets'
@@ -116,3 +116,7 @@ alias kl='kubectl logs'
 alias klf='kubectl logs -f --tail=10'
 alias kpf='kubectl port-forward'
 alias kx='kubectl exec -it'
+alias kd='k delete'
+alias kda='k delete statefulsets,deployment,jobs,cronjob,svc,etcd,configmap,rbac,po,etcd,pvc,serviceaccount,vaultsecret,mapping --all'
+
+alias tp='telepresence --run zsh'

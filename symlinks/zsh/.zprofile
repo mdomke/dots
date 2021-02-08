@@ -74,3 +74,5 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"

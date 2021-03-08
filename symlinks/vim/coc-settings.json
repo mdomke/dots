@@ -21,6 +21,7 @@
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifier": "auto",
   "typescript.suggest.paths": true,
   "typescript.suggest.autoImports": true,
   "yaml.format.enable": true,

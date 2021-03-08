@@ -27,6 +27,8 @@ if filereadable(expand("~/.config/nvim/plugins.vim"))
   source ~/.config/nvim/plugins.vim
 endif
 
+set noshowmode
+
 " set shell=/bin/zsh
 set timeout
 set timeoutlen=500

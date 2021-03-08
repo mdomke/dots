@@ -1,10 +1,10 @@
 let g:lightline = {
   \ 'colorscheme': 'apprentice',
   \ 'active': {
-  \   'left':  [[], ['fugitive', 'readonly', 'filename', 'modified']]
+  \   'left':  [['mode'], ['gitbranch'], ['readonly', 'filename']]
   \ },
   \ 'inactive': {
-  \   'left':  [[], ['fugitive', 'readonly', 'filename', 'modified']],
+  \   'left':  [['mode'], ['gitbranch'], ['readonly', 'filename']],
   \   'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
   \ },
   \ 'tabline': {
@@ -14,16 +14,26 @@ let g:lightline = {
   \   'lineinfo': "\ue0a1%3l:%-2v"
   \ },
   \ 'component_function': {
-  \   'fugitive': 'LightLineFugitive',
+  \   'gitbranch': 'FugitiveHead',
   \   'filename': "LightLineFilename",
   \   'filetype': "LightLineFiletype",
   \   'fileformat': "LightLineFileformat"
   \ },
-  \ 'component_visible_condition': {
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ },
   \ 'separator': { 'left': "", 'right': "" },
-  \ 'subseparator': { 'left': "|", 'right': "|" }
+  \ 'subseparator': { 'left': "|", 'right': "|" },
+  \ 'mode_map': {
+  \   'n' : 'N',
+  \   'i' : 'I',
+  \   'R' : 'R',
+  \   'v' : 'V',
+  \   'V' : 'VL',
+  \   "\<C-v>": 'VB',
+  \   'c' : 'C',
+  \   's' : 'S',
+  \   'S' : 'SL',
+  \   "\<C-s>": 'SB',
+  \   't': 'T',
+  \ },
   \ }
 
 function! LightLineModified()
@@ -32,14 +42,6 @@ endfunction
 
 function! LightLineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '\ue0a2' : ''
-endfunction
-
-function! LightLineFugitive()
-  if exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? "\ue0a0 "._ : ''
-  endif
-  return ''
 endfunction
 
 function! LightLineFilename()

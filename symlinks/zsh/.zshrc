@@ -11,7 +11,7 @@ then
   zgen prezto editor key-bindings vi
   zgen prezto prompt theme lambda
   zgen prezto ssh-agent forwarding yes
-  zgen prezto ssh load identities figo id_rsa
+  zgen prezto ssh load identities id_rsa
 
   zgen prezto
   zgen prezto git

@@ -1,7 +1,7 @@
 set colorcolumn=100
 
 let g:python_breakpoint_bind = "<leader><leader>b"
-let g:python_breakpoint_cmd = "import pdb; pdb.set_trace()"
+let g:python_breakpoint_cmd = "breakpoint()"
 
 fun! python#breakpoint(lnum)
   let plnum = prevnonblank(a:lnum)

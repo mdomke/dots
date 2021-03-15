@@ -25,6 +25,7 @@ then
 
   zgen load "${HOME}/.zsettings"
   zgen load "${HOME}/.zthemes"
+  zgen load "${HOME}/.cargo/env"
   zgen load "${HOME}/.dots/symlinks/zsh/completion"
 
   zgen load wfxr/forgit

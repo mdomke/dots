@@ -1,7 +1,7 @@
 {
   "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": ["python", "Markdown", "css", "json", "yaml", "java", "rust"],
-  "java.format.settings.url": "/Users/mdomke/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+  "java.format.settings.url": "~/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "java.format.onType.enabled": true,
   "java.import.gradle.enabled": true,
   "java.completion.enabled": true,
@@ -12,10 +12,10 @@
   "python.linting.pylamaEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
-  "python.formatting.blackPath": "/Users/mdomke/.local/bin/black",
+  "python.formatting.blackPath": "~/.local/bin/black",
   "python.formatting.blackArgs": ["-l", "100"],
   "python.formatting.provider": "black",
-  "python.sortImports.path": "/Users/mdomke/.local/bin/isort",
+  "python.sortImports.path": "~/.local/bin/isort",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
@@ -38,5 +38,5 @@
       "filetypes": ["go"]
     }
   },
-  "clangd.path": "/Users/mdomke/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }

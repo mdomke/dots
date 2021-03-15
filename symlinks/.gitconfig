@@ -143,7 +143,7 @@
 
 [core]
   autocrlf = false
-	excludesfile = /Users/mdomke/.gitignore
+	excludesfile = ~/.gitignore
   editor = nvim
   ; pager = diff-so-fancy | less --tabs=4 -RFX
   pager = delta

@@ -73,8 +73,8 @@ def install_brews(ctx):
 def install_homebrew(ctx):
     if ctx.run("which brew", warn=True, hide=True).failed:
         description("Installing homebrew")
-        url = "https://raw.githubusercontent.com/Homebrew/install/master/install"
-        ctx.run(f'ruby -e "$(curl -fsSL {url})"')
+        url = "https://raw.githubusercontent.com/Homebrew/install/master/install.sh"
+        ctx.run(f'/bin/bash -c "$(curl -fsSL {url})"')
 
 
 @task

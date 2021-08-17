@@ -1,7 +1,7 @@
 " Linter
 " Plug 'scrooloose/syntastic'
-" Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
+" Plug 'dense-analysis/ale'
 
 " Completion
 " Plug 'valloric/youcompleteme', { 'for': ['c', 'cpp', 'rust', 'javascript'], 'do': './install.py --clang-completer --gocode-completer --racer-completer --js-completer' }
@@ -9,7 +9,6 @@
 " Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'sheerun/vim-polyglot'
 
 " HTML/CSS/LESS

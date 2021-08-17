@@ -1,6 +1,9 @@
 {
   "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": ["python", "Markdown", "css", "json", "yaml", "java", "rust"],
+  "diagnostic-languageserver.filetypes": {
+    "yaml": "languagetool"
+  },
   "java.format.settings.url": "~/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "java.format.onType.enabled": true,
   "java.import.gradle.enabled": true,
@@ -16,6 +19,7 @@
   "python.formatting.blackArgs": ["-l", "100"],
   "python.formatting.provider": "black",
   "python.sortImports.path": "~/.local/bin/isort",
+  "pyright.organizeimports.provider": "isort",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,

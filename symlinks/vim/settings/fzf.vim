@@ -9,24 +9,40 @@ nnoremap <silent> <Leader>b  :Buffers<CR>
 let g:which_key_map.b = 'fzf-buffers'
 
 nnoremap <silent> <Leader>ag :Ag<CR>
-nnoremap <silent> <Leader>rg :Rg<CR>
-nnoremap <silent> <Leader>rw :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>rg :RipGrep<CR>
+nnoremap <silent> <Leader>rw :RipGrep <C-R><C-W><CR>
 
 nnoremap <silent> <Leader>h  :History:<CR>
 let g:which_key_map.h = 'fzf-history'
 
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+  \ call fzf#vim#ag(
+  \   <q-args>,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
-command! -bang -nargs=* Rg
+command! -bang -nargs=* RipGrep
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
+nnoremap <silent> <Leader>gg :Gbranch<CR>
+command! -bang Gbranch
+  \ call fzf#run(
+  \   fzf#wrap({
+  \     'source': 'git branch -v --color=always',
+  \     'sink': function('s:change_branch'),
+  \     'options': '--ansi --nth=1',
+  \   },
+  \   <bang>0))
+
+function! s:change_branch(branch)
+  let l:name = split(trim(a:branch), "", 1)[0]
+  execute 'Git checkout ' . l:name
+endfunction
 
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler

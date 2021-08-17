@@ -9,3 +9,6 @@ bindkey "^X^L" insert-last-command-output
 # emacs style
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+
+# autosuggest
+bindkey '' autosuggest-accept

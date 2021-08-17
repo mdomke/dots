@@ -19,9 +19,11 @@ then
   zgen prezto ssh
   zgen prezto gpg
   zgen prezto fasd
+  zgen prezto homebrew
   zgen prezto python
   zgen prezto history-substring-search
   zgen prezto syntax-highlighting
+  zgen prezto autosuggestions
 
   zgen load "${HOME}/.zsettings"
   zgen load "${HOME}/.zthemes"

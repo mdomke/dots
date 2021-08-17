@@ -1,58 +1,91 @@
+fg: &fg "#BCBCBC"
+
+bg: &bg "#262626"
+lightBg: &lightBg "#444444"
+
+new: &new "#5FAFAF"
+border: &border "#5F8787"
+notice: &notice "#FFFFAF"
+highlight: &highlight "#FF8700"
+dimmed: &dimmed "#6C6C6C"
+error: &error "#AF5F5F"
+key: &key "#5F5F87"
+
 k9s:
   body:
-    fgColor: '#BCBCBC'
-    bgColor: '#262626'
-    logoColor: '#AF5F5F'
+    fgColor: *fg
+    bgColor: *bg
+    logoColor: *bg
+
   info:
-    fgColor: '#AF5F5F'
-    sectionColor: '#BCBCBC'
+    fgColor: *border
+    sectionColor: *fg
+
+  prompt:
+    fgColor: *fg
+    bgColor: *bg
+    suggestColor: *dimmed
+
+  dialog:
+    fgColor: *fg
+    bgColor: *bg
+    buttonFgColor: *fg
+    buttonBgColor: *border
+    buttonFocusFgColor: *bg
+    buttonFocusBgColor: *border
+    labelFgColor: *key
+    fieldFgColor: *fg
+
   frame:
     menu:
-      fgColor: '#FFFFFF'
-      keyColor: '#5F8787'
-      numKeyColor: '#5F5F87'
+      fgColor: *fg
+      keyColor: *border
+      numKeyColor: *key
 
     crumbs:
-      bgColor: '#5F5F87'
-      activeColor: '#5F8787'
+      bgColor: *key
+      activeColor: *border
 
     status:
-      highlightColor: '#FFFFAF'
-      modifyColor: '#5F87AF'
-      newColor: '#8FAFD7'
-      addColor: '#FFFFAF'
-      completedColor: '#6C6C6C'
-      killColor: '#AF5F5F'
-      errorColor: '#FF8700'
+      highlightColor: *notice
+      modifyColor: white
+      newColor: *fg
+      addColor: *notice
+      completedColor: *dimmed
+      killColor: *error
+      errorColor: *error
 
     title:
-      fgColor: '#5FAFAF'
-      bgColor: '#262626'
-      counterColor: '#BCBCBC'
-      filterColor: '#5FAFAF'
-      highlightColor: '#FF8700'
+      fgColor: *border
+      bgColor: *bg
+      counterColor: *dimmed
+      filterColor: *highlight
+      highlightColor: *highlight
 
     border:
-      fgColor: '#8FAFD7'
-      focusColor: '#5FAFAF'
-
-  table:
-    fgColor: '#8FAFD7'
-    bgColor: '#262626'
-    cursorColor: '#8FAFD7'
-    markColor: '#FF8700'
-
-    header:
-      fgColor: '#BCBCBC'
-      bgColor: '#1C1C1C'
-      sorterColor: '#FF8700'
+      fgColor: *dimmed
+      focusColor: *border
 
   views:
+    table:
+      fgColor: *border
+      bgColor: *bg
+      cursorColor: *border
+      markColor: *highlight
+
+      header:
+        fgColor: *fg
+        bgColor: *lightBg
+        sorterColor: *highlight
+
     logs:
-      fgColor: '#BCBCBC'
-      bgColor: '#262626'
+      fgColor: *fg
+      bgColor: *bg
+      indicator:
+        fgColor: *fg
+        bgColor: *lightBg
+
     yaml:
-      # keyColor: '#5FAFAF'
-      keyColor: '#5F5F87'
-      colonColor: '#5F5F87'
-      valueColor: '#BCBCBC'
+      keyColor: *key
+      colonColor: *key
+      valueColor: *fg

@@ -8,7 +8,6 @@
 #
 # Browser
 #
-
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
@@ -16,7 +15,6 @@ fi
 #
 # Editors
 #
-
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
@@ -65,13 +63,9 @@ fi
 #
 # Temporary Files
 #
-
 if [[ ! -d "$TMPDIR" ]]; then
   export TMPDIR="/tmp/$LOGNAME"
   mkdir -p -m 700 "$TMPDIR"
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-export PATH="$HOME/.poetry/bin:$PATH"
-

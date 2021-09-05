@@ -50,6 +50,7 @@ Plug 'honza/dockerfile.vim'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/csv.vim'
 Plug 'tsandall/vim-rego'
+Plug 'aliou/bats.vim'
 
 " Python
 " Plug 'davidhalter/jedi-vim', { 'for': 'python' }

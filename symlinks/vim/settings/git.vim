@@ -24,15 +24,15 @@ let g:which_key_map.d = {
 let g:which_key_map.g = {
       \ 'name': '+git',
       \ 'a':    ['Gwrite',          'add'],
-      \ 'b':    ['Gblame',          'blame'],
+      \ 'b':    [':Git blame',      'blame'],
       \ 'c':    [':Git commit',     'commit'],
       \ 'm':    [':Git merge',      'merge'],
       \ 'p':    [':Git push',       'push'],
       \ 'pl':   [':Git pull',       'pull'],
       \ 'l':    [':MerginalToggle', 'list branches'],
-      \ 'h':    ['GV',              'history'],
-      \ 'f':    ['GV!',             'history of file'],
-      \ 's':    ['Gstatus',         'status'],
+      \ 'h':    [':GV',             'history'],
+      \ 'f':    [':GV!',            'history of file'],
+      \ 's':    [':Git',            'status'],
       \ }
 
 nmap ghn <Plug>(GitGutterNextHunk)

@@ -29,6 +29,7 @@ then
   zgen load "${HOME}/.zthemes"
   zgen load "${HOME}/.cargo/env"
   zgen load "${HOME}/.dots/symlinks/zsh/completion"
+  zgen load "${HOME}/.asdf/completions"
 
   zgen load wfxr/forgit
   zgen load jonmosco/kube-ps1

@@ -79,13 +79,7 @@ alias ifconfig="${grc} ifconfig"
 alias traceroute="${grc} traceroute"
 
 # Python
-alias py2="python2"
-alias py3="python3"
-alias py-build="python setup.py bdist_wheel"
 alias repl="ipython"
-alias mkvenv="pyenv virtualenv"
-alias workon="pyenv activate"
-# alias ="pyenv deactivate"
 
 # docker
 alias dcp="docker-compose"
@@ -105,7 +99,8 @@ alias q="tox -e quick --"
 
 alias k="kubectl"
 alias ka='kubectl apply -f'
-alias kcc='kubectl config use-context'
+alias kcu='kubectl config use-context'
+alias kcl='kubectl config get-contexts'
 alias kv='kubectl describe'
 alias kg='kubectl get'
 alias kga='kubectl get pods,services,deployments,statefulsets'

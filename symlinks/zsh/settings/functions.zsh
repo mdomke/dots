@@ -89,12 +89,12 @@ kdi() {
 	kubectl describe "${typ}" "${item}"
 }
 
-kcni() {
+kni() {
 	local ns=$(kubectl get namespace | fzf | awk '{print $1}')
-  kcn "${ns}"
+  kn "${ns}"
 }
 
-kcn() {
+kn() {
 	kubectl config set-context --current --namespace="$1"
 }
 

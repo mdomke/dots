@@ -77,7 +77,7 @@
     "zsh/themes/": "~/.zthemes",
     "vim/": "~/.config/nvim/",
     "bin/*": "~/.bin/",
-    "k9s/skin.yml": "~/Library/Preferences/k9s/",
+    "k9s/skin.yml": "~/Library/Application Support/k9s/",
     "gnupg/*": "~/.gnupg/"
   },
   "copy": {

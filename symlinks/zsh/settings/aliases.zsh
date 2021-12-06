@@ -115,3 +115,5 @@ alias kd='k delete'
 alias kda='k delete statefulsets,deployment,jobs,cronjob,svc,etcd,configmap,rbac,po,etcd,pvc,serviceaccount,vaultsecret,mapping --all'
 
 alias tp='telepresence --run zsh'
+
+alias yq4='yq'

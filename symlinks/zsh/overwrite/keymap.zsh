@@ -11,4 +11,4 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 # autosuggest
-bindkey '' autosuggest-accept
+bindkey '^k' autosuggest-accept

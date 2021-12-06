@@ -8,15 +8,6 @@ nnoremap Y y$
 nnoremap 0 ^
 nnoremap ^ 0
 
-" Brackets are not very reachable on a non-US keyboard layout so that we
-" remap them to - and _. This is mostly for vim-unimpaired
-nmap - [
-nmap _ ]
-omap - [
-omap _ ]
-xmap - [
-xmap _ ]
-
 " Surround shortcuts
 map  <Leader># ysiw#
 vmap <Leader># c#{<C-R>"}<ESC>
@@ -70,9 +61,7 @@ let g:which_key_map[','] = {
       \ }
 
 
-" Substitute with yanked text
-xnoremap <Leader>p "_dP
-nnoremap S "_diwP
+
 
 nnoremap <Leader>. '.
 let g:which_key_map['.'] = 'last-edit-loc'
@@ -132,6 +121,15 @@ nnoremap <silent> ss <C-w>s
 " ============================
 " Shortcuts for everyday tasks
 " ============================
+nnoremap S "_diwP
+vnoremap <leader>y "*y
+let g:which_key_map.y = 'global-yank'
+
+nnoremap <leader>p "*p
+let g:which_key_map.p = 'global-paste'
+
+nnoremap ;; :w<CR>
+
 let g:which_key_map.c = { 'name': '+current' }
 
 nnoremap <silent> <Leader>cf :let @* = expand("%:~")<CR>

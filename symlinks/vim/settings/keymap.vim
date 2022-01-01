@@ -1,13 +1,3 @@
-"make Y consistent with C and D
-nnoremap Y y$
-
-" Make 0 go to the first character rather than the beginning
-" of the line. When we're programming, we're almost always
-" interested in working with text rather than empty space. If
-" you want the traditional beginning of line, use ^
-nnoremap 0 ^
-nnoremap ^ 0
-
 " Surround shortcuts
 map  <Leader># ysiw#
 vmap <Leader># c#{<C-R>"}<ESC>
@@ -59,8 +49,6 @@ let g:which_key_map[','] = {
       \ '{':    ['f{ci{',  'inside-{'],
       \ '}':    ['f}ci}',  'inside-}'],
       \ }
-
-
 
 
 nnoremap <Leader>. '.
@@ -129,6 +117,7 @@ nnoremap <leader>p "*p
 let g:which_key_map.p = 'global-paste'
 
 nnoremap ;; :w<CR>
+nnoremap qq :q<CR>
 
 let g:which_key_map.c = { 'name': '+current' }
 

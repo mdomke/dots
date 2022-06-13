@@ -22,6 +22,9 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
+" Go
+Plug 'fatih/vim-go', { 'for': 'go' }
+
 " Rust
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 

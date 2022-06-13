@@ -117,3 +117,4 @@ alias kda='k delete statefulsets,deployment,jobs,cronjob,svc,etcd,configmap,rbac
 alias tp='telepresence --run zsh'
 
 alias yq4='yq'
+alias fire-in-da-hole='open /Applications/UrbanTerror/Quake3-UrT.app --args "+password figo" "+connect ut.dev.finleap.cloud"'

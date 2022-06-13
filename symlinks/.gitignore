@@ -20,6 +20,7 @@ Session.vim
 .python-version
 .idea
 .vscode
+.dccache
 .vim
 .tool-versions
 

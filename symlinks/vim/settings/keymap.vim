@@ -111,6 +111,7 @@ nnoremap <silent> ss <C-w>s
 " ============================
 nnoremap S "_diwP
 vnoremap <leader>y "*y
+nnoremap <leader>y "*y
 let g:which_key_map.y = 'global-yank'
 
 nnoremap <leader>p "*p

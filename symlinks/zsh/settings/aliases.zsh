@@ -72,7 +72,7 @@ alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 
 
 alias lsnet="lsof -nP -i4TCP -sTCP:LISTEN"
 
-local grc="/usr/local/bin/grc -es --colour=auto"
+local grc="${HOMEBREW_PREFIX}/bin/grc -es --colour=auto"
 alias ping="${grc} ping"
 alias dig="${grc} dig"
 alias ifconfig="${grc} ifconfig"
@@ -88,13 +88,7 @@ alias dsw="docker-swarm"
 alias drm='docker rm -v $(docker ps -aq -f status=exited)'
 alias drmi='docker rmi $(docker images -f "dangling=true" -q)'
 
-alias ci="fly -t ci"
-alias ap='pwd; echo "Continue?"; read; ansible-playbook --vault-password-file=~/.vault_pass.txt -i inventory --diff'
-alias av='ansible-vault --vault-password-file=~/.vault_pass.txt'
-alias apd='ap plays/fapi_deploy_to_host.yml'
-
 alias lint="tox -e flake8 --"
-alias t="tox -e py27 --"
 alias q="tox -e quick --"
 
 alias k="kubectl"
@@ -117,4 +111,4 @@ alias kda='k delete statefulsets,deployment,jobs,cronjob,svc,etcd,configmap,rbac
 alias tp='telepresence --run zsh'
 
 alias yq4='yq'
-alias fire-in-da-hole='open /Applications/UrbanTerror/Quake3-UrT.app --args "+password figo" "+connect ut.dev.finleap.cloud"'
+alias fire-in-da-hole='open /Applications/UrbanTerror/Quake3-UrT.app --args "+password fire" "+connect home.lad1337.com"'

@@ -138,7 +138,7 @@
   verbose = true
 
 [core]
-  autocrlf = false
+	autocrlf = input
 	excludesfile = ~/.gitignore
   editor = nvim
   ; pager = diff-so-fancy | less --tabs=4 -RFX
@@ -155,7 +155,7 @@
   statusHints = false
 
 [include]
-  path = .gitconfig.user
+  path = ~/.gitconfig.user
 
 [filter "media"]
   clean = git-media-clean %f
@@ -177,3 +177,6 @@
 	required = true
 [init]
 	defaultBranch = main
+
+[gpg]
+  program = gpg

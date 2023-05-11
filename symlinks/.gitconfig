@@ -116,7 +116,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 [apply]
   whitespace = nowarn
@@ -139,8 +139,8 @@
 
 [core]
 	autocrlf = input
-	excludesfile = ~/.gitignore
-  editor = nvim
+	excludesfile = /Users/martin.domke/.gitignore
+  editor = hx
   ; pager = diff-so-fancy | less --tabs=4 -RFX
   pager = delta
 
@@ -148,8 +148,20 @@
   diffFilter = delta --color-only
 
 [delta]
-  features = side-by-side line-numbers decorations
-  whitespace-error-style = 22 reverse
+  features                      = side-by-side line-numbers decorations
+  theme                         = Nord
+  whitespace-error-style        = 22 reverse
+  # minus-style                   = syntax "#37222c"
+  # minus-non-emph-style          = syntax "#37222c"
+  # minus-emph-style              = syntax "#713137"
+  # minus-empty-line-marker-style = syntax "#37222c"
+  # line-numbers-minus-style      = "#c25d64"
+  # plus-style                    = syntax "#20303b"
+  # plus-non-emph-style           = syntax "#20303b"
+  # plus-emph-style               = syntax "#2c5a66"
+  # plus-empty-line-marker-style  = syntax "#20303b"
+  # line-numbers-zero-style       = "#3b4261"
+  # line-numbers-plus-style       = "#399a96"
 
 [advice]
   statusHints = false
@@ -180,3 +192,6 @@
 
 [gpg]
   program = gpg
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

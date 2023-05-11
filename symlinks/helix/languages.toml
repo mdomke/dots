@@ -1,0 +1,74 @@
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
+# language-server = { command = "pyright-langserver", args = ["--stdio"] }
+auto-format = true
+formatter = { command = "sh", args = [
+  "-c",
+  "black --quiet - | isort --profile black -",
+] }
+
+[language.config.pylsp.plugins]
+ruff = { enabled = true, lineLength = 100 }
+
+[[language]]
+name = "go"
+formatter = { command = "goimports" }
+
+[[language]]
+name = "html"
+formatter = { command = "npx prettier", args = ["--parser", "html"] }
+
+[[language]]
+name = "json"
+formatter = { command = "npx prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "css"
+formatter = { command = "npx prettier", args = ["--parser", "css"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = "npx prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "npx prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "xml"
+formatter = { command = "npx prettier", args = ["--parser", "xml"]}
+
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+config = { ltex.disabledRules = { "en-US" = [
+  "PROFANITY",
+], "en-GB" = [
+  "PROFANITY",
+] }, ltex.dictionary = { "en-US" = [
+  "builtin",
+], "en-GB" = [
+  "builtin",
+] } }
+
+[[language]]
+name = "hcl"
+formatter = { command = "terraform", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "rust"
+
+[language.language-server]
+command = "rustup"
+args = ["run", "stable", "rust-analyzer"]
+
+[language.config.check]
+command = "clippy"

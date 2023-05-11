@@ -1,0 +1,52 @@
+theme = "nord"
+
+[editor]
+bufferline = "always"
+cursorline = false
+color-modes = true
+rulers = [100]
+auto-save = true
+completion-trigger-len = 1
+undercurl = true
+true-color = true
+text-width = 100
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+right = [
+  "version-control",
+  "spacer",
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[keys.normal]
+C-m = "save_selection"
+C-s = ":write"
+C-q = ":quit"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+C-h = "jump_view_left"
+
+[keys.insert]
+j.k = "normal_mode"
+

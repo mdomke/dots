@@ -28,20 +28,20 @@ alias psg="ps aux | grep "
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vim ~/.zsettings/aliases.zsh' #alias edit
+alias ae='$EDITOR ~/.zsettings/aliases.zsh' #alias edit
 alias ar='source ~/.zsettings/aliases.zsh'  #alias reload
 
 alias vim="nvim"
 alias ve='vim ~/.config/nvim/init.vim'
 
 # zsh profile editing
-alias ze='vim ~/.zshrc'
+alias ze='$EDITOR ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gpl='git pull'
 alias gcp='git cp'
-alias gi='vim .gitignore'
+alias gi='$EDITOR .gitignore'
 alias guns='git unstage'
 alias gunc='git uncommit'
 alias gam='git amend --reset-author'

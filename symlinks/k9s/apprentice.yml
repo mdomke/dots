@@ -1,0 +1,91 @@
+fg: &fg "#BCBCBC"
+
+bg: &bg "#262626"
+lightBg: &lightBg "#444444"
+
+new: &new "#5FAFAF"
+border: &border "#5F8787"
+notice: &notice "#FFFFAF"
+highlight: &highlight "#FF8700"
+dimmed: &dimmed "#6C6C6C"
+error: &error "#AF5F5F"
+key: &key "#5F5F87"
+
+k9s:
+  body:
+    fgColor: *fg
+    bgColor: *bg
+    logoColor: *bg
+
+  info:
+    fgColor: *border
+    sectionColor: *fg
+
+  prompt:
+    fgColor: *fg
+    bgColor: *bg
+    suggestColor: *dimmed
+
+  dialog:
+    fgColor: *fg
+    bgColor: *bg
+    buttonFgColor: *fg
+    buttonBgColor: *border
+    buttonFocusFgColor: *bg
+    buttonFocusBgColor: *border
+    labelFgColor: *key
+    fieldFgColor: *fg
+
+  frame:
+    menu:
+      fgColor: *fg
+      keyColor: *border
+      numKeyColor: *key
+
+    crumbs:
+      bgColor: *key
+      activeColor: *border
+
+    status:
+      highlightColor: *notice
+      modifyColor: white
+      newColor: *fg
+      addColor: *notice
+      completedColor: *dimmed
+      killColor: *error
+      errorColor: *error
+
+    title:
+      fgColor: *border
+      bgColor: *bg
+      counterColor: *dimmed
+      filterColor: *highlight
+      highlightColor: *highlight
+
+    border:
+      fgColor: *dimmed
+      focusColor: *border
+
+  views:
+    table:
+      fgColor: *border
+      bgColor: *bg
+      cursorColor: *border
+      markColor: *highlight
+
+      header:
+        fgColor: *fg
+        bgColor: *lightBg
+        sorterColor: *highlight
+
+    logs:
+      fgColor: *fg
+      bgColor: *bg
+      indicator:
+        fgColor: *fg
+        bgColor: *lightBg
+
+    yaml:
+      keyColor: *key
+      colonColor: *key
+      valueColor: *fg

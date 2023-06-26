@@ -1,0 +1,1 @@
+source <(fasd --init auto)

@@ -1,0 +1,146 @@
+#!/bin/bash
+
+brew-setup() {
+	if [ ! "$(command -v brew)" ]; then
+		echo "==> Installing homebrew.."
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	else
+		echo "==> Homebrew already installed!"
+	fi
+}
+
+brew-install() {
+	{{ $taps := list
+		"homebrew/bundle"
+		"homebrew/cask"
+		"homebrew/cask-drivers"
+		"homebrew/cask-fonts"
+		"homebrew/cask-versions"
+		"homebrew/core"
+		"homebrew/services"
+		"homeport/tap"
+		"mdomke/git-semver"
+		"neovim/neovim"
+		"osx-cross/arm"
+		"osx-cross/avr"
+		"qmk/qmk"
+	-}}
+
+	{{ $brews := list
+		"age"
+		"bat"
+		"cloc"
+		"coreutils"
+		"d2"
+		"diffutils"
+		"direnv"
+		"fasd"
+		"fd"
+		"findutils"
+		"fzf"
+		"git"
+		"git-delta"
+		"git-quick-stats"
+		"gitui"
+		"gnu-getopt"
+		"gnu-sed"
+		"grc"
+		"grep"
+		"grpcurl"
+		"helix"
+		"hexyl"
+		"homeport/tap/dyff"
+		"htop"
+		"httpie"
+		"jq"
+		"k9s"
+		"kube-ps1"
+		"magic-wormhole"
+		"marksman"
+		"mdomke/git-semver/git-semver"
+		"mongosh"
+		"moreutils"
+		"mr"
+		"mtr"
+		"neofetch"
+		"neovim"
+		"node"
+		"openssl@3"
+		"pastel"
+		"pinentry"
+		"pinentry-mac"
+		"pipx"
+		"pstree"
+		"pyright"
+		"qmk/qmk/qmk"
+		"ranger"
+		"re2"
+		"rename"
+		"ripgrep"
+		"sd"
+		"shellcheck"
+		"shfmt"
+		"showkey"
+		"slides"
+		"step"
+		"stern"
+		"tree"
+		"watch"
+		"wget"
+		"wrk"
+		"zsh"
+	-}}
+
+	{{ $casks := list
+		"1password-cli"
+		"appcleaner"
+		"docker"
+		"dropbox"
+		"firefox"
+		"font-fira-code-nerd-font"
+		"font-fira-sans"
+		"font-hack"
+		"font-hasklug-nerd-font"
+		"insomnia"
+		"istat-menus"
+		"kitty"
+		"raycast"
+		"spotify"
+		"telegram"
+	-}}
+
+	brew bundle --no-lock --file=- <<-EOF
+	{{ range ($taps | sortAlpha | uniq) -}}
+	tap "{{ . }}"
+	{{ end -}}
+	{{ range ($brews | sortAlpha | uniq) -}}
+	brew "{{ . }}"
+	{{ end -}}
+	{{ range ($casks | sortAlpha | uniq) -}}
+	cask "{{ . }}"
+	{{ end -}}	
+	EOF
+}
+
+pipx-install() {
+	{{ $packages := list 
+		"black"
+		"hatch"
+		"isort"
+		"pip-tools"
+		"pre-commit"
+		"pyupgrade"
+	-}}
+
+	{{ range ($packages | sortAlpha | uniq) -}}
+	pipx install "{{ . }}"
+	{{ end -}}
+}
+
+main() {
+	brew-setup
+	brew-install
+	pipx-install
+}
+
+main "$@"

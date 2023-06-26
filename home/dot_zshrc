@@ -1,0 +1,44 @@
+# zmodload zsh/zprof
+
+export ZGEN_AUTOLOAD_COMPINIT=0
+
+source "${HOME}/.zgen/zgen.zsh"
+
+if ! zgen saved;
+then
+  zgen prezto '*:*' case-sensitive no
+  zgen prezto '*:*' color yes
+  zgen prezto editor key-bindings vi
+  zgen prezto prompt theme lambda
+  zgen prezto ssh-agent forwarding yes
+  zgen prezto ssh load identities id_rsa
+
+  zgen prezto
+  zgen prezto git
+  zgen prezto editor
+  zgen prezto ssh
+  zgen prezto gpg
+  zgen prezto fasd
+  zgen prezto history-substring-search
+  zgen prezto syntax-highlighting
+  zgen prezto autosuggestions
+
+  zgen load "${HOME}/.zsettings"
+  zgen load "${HOME}/.zthemes"
+  zgen load "${HOME}/.cargo/env"
+  zgen load "${HOME}/.dots/symlinks/zsh/completion"
+  zgen load "${HOME}/.asdf/completions"
+
+  zgen load jonmosco/kube-ps1
+  zgen save
+fi
+
+for file in "${HOME}"/.config/zsh/overwrite/*.zsh
+do
+  # shellcheck disable=SC1090
+  . "${file}"
+done
+
+autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit && compinit
+complete -o nospace -C /usr/local/bin/mc mc

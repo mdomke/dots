@@ -31,19 +31,13 @@ venv() {
 _help() {
   cat << EOF
 Usage:
-  venv [<name> [<version>]]
+  venv [<name>]
   venv ls
   venv rm <name>
 
 Description:
   By default the command will create or activate a virtualenv. If <name> is not
-  given it will be deduced from the current dir name. If <version> is not
-  provided upon virtualenv creation the version globally activated by asdf will
-  be used. Use 
-
-    $ asdf list python
-
-  to list available Python versions.
+  given it will be deduced from the current dir name.
 
   The ls command prefixs the curretly active environment with an asterisk.
 EOF
@@ -64,7 +58,6 @@ _list_venvs() {
 _create_venv() {
   local -r venv_name="$1"
   local -r venv_path="$2"
-  local -r python_version="$3"
 
   if [[ -d "${venv_path}" ]]; then
     echo "Activating virtualenv '${venv_name}'"
@@ -72,15 +65,9 @@ _create_venv() {
     return 0
   fi
 
-  local python_bin
-  if [[ -n "${python_version}" ]]; then
-    python_bin="${ASDF_DIR}/installs/python/${python_version}/bin/python"
-  else
-    python_bin="$("${HOME}"/.asdf/bin/asdf which python)"
-  fi
-
+  local python_bin="$(which python)"
   if [[ ! -x "${python_bin}" ]]; then
-    echo "Python ${python_version} is not installed."
+    echo "Python is not installed."
     return 1
   fi
 

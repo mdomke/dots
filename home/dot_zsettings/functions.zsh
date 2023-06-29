@@ -94,7 +94,7 @@ kni() {
   kn "${ns}"
 }
 
-kn() {
+kcn() {
 	kubectl config set-context --current --namespace="$1"
 }
 

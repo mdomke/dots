@@ -25,10 +25,10 @@ format = ":[$all_status$ahead_behind]($style)"
 style = "bold purple"
 
 [python]
-format = ' [$virtualenv]($style) '
+format = ' [$virtualenv]($style)'
 
 [kubernetes]
-format = "[$context](red bold):[$namespace](cyan bold)"
+format = " [$context](red bold):[$namespace](cyan bold)"
 disabled = false
 
 [kubernetes.context_aliases]

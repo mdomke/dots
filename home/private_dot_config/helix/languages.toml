@@ -15,6 +15,9 @@ ruff = { enabled = true, lineLength = 100 }
 name = "go"
 formatter = { command = "golines -m 120" }
 
+[[language]]
+name = "yaml"
+file-types = ["yml", "yaml", "argo-yaml"]
 
 [[language]]
 name = "html"

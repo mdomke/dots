@@ -13,7 +13,8 @@ ruff = { enabled = true, lineLength = 100 }
 
 [[language]]
 name = "go"
-formatter = { command = "goimports" }
+formatter = { command = "golines -m 120" }
+
 
 [[language]]
 name = "html"

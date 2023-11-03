@@ -1,3 +1,7 @@
-if [ -e ~/.secrets ]; then
-  source ~/.secrets
+if [ -e ~/.zsecrets ]; then
+  source ~/.zsecrets
+fi
+
+if [ -e ~/.zprivate ]; then
+  source ~/.zprivate
 fi

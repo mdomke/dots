@@ -1,15 +1,25 @@
 [[language]]
 name = "python"
 roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
-# language-server = { command = "pyright-langserver", args = ["--stdio"] }
 auto-format = true
 formatter = { command = "sh", args = [
   "-c",
   "black --quiet - | isort --profile black -",
 ] }
 
-[language.config.pylsp.plugins]
+[language-server.pylsp.plugins]
 ruff = { enabled = true, lineLength = 100 }
+
+[language-server.rust-analyzer]
+command = "rustup"
+args = ["run", "stable", "rust-analyzer"]
+
+[language-server.rust-analyzer.config]
+check = { command = "clippy" }
+
+[language-server.ltex-ls.config]
+ltex.disabledRules = {  "en-US" = [ "PROFANITY" ], "en-GB" = [ "PROFANITY" ] }
+ltex.dictionary = { "en-US" = [ "builtin" ], "en-GB" = [ "builtin" ] }
 
 [[language]]
 name = "go"
@@ -47,16 +57,7 @@ formatter = { command = "npx prettier", args = ["--parser", "xml"]}
 
 [[language]]
 name = "markdown"
-language-server = { command = "ltex-ls" }
-config = { ltex.disabledRules = { "en-US" = [
-  "PROFANITY",
-], "en-GB" = [
-  "PROFANITY",
-] }, ltex.dictionary = { "en-US" = [
-  "builtin",
-], "en-GB" = [
-  "builtin",
-] } }
+language-servers = [ "ltex-ls" ]
 
 [[language]]
 name = "hcl"
@@ -67,12 +68,3 @@ auto-format = true
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
 
-[[language]]
-name = "rust"
-
-[language.language-server]
-command = "rustup"
-args = ["run", "stable", "rust-analyzer"]
-
-[language.config.check]
-command = "clippy"

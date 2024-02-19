@@ -2,13 +2,12 @@
 name = "python"
 roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
 auto-format = true
-formatter = { command = "sh", args = [
-  "-c",
-  "black --quiet - | isort --profile black -",
-] }
 
-[language-server.pylsp.plugins]
-ruff = { enabled = true, lineLength = 100 }
+[language-server.pylsp]
+args = ["-v", "--log-file", "/tmp/pyslp.log"]
+
+[language-server.pylsp.config.pylsp.plugins]
+ruff = { enabled = true, lineLength = 100, format = ["I"] }
 
 [language-server.rust-analyzer]
 command = "rustup"

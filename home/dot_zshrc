@@ -9,7 +9,7 @@ then
   zgen prezto '*:*' case-sensitive no
   zgen prezto '*:*' color yes
   zgen prezto editor key-bindings vi
-  zgen prezto prompt theme starship
+#  zgen prezto prompt theme starship
   zgen prezto ssh-agent forwarding yes
   zgen prezto ssh load identities id_rsa
 
@@ -28,6 +28,8 @@ then
   zgen load "${HOME}/.zthemes"
   zgen load "${HOME}/.cargo/env"
   zgen load "${HOME}/.local/share/completions"
+  zgen load "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+  zgen load "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
   zgen save
 fi
 
@@ -36,6 +38,8 @@ do
   # shellcheck disable=SC1090
   . "${file}"
 done
+
+eval "$(starship init zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit && compinit

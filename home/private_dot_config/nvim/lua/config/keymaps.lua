@@ -8,7 +8,8 @@ vim.g.maplocalleader = ","
 
 vim.keymap.set("n", ";;", "<cmd>w<cr><esc>", { desc = "Save file" })
 
-vim.keymap.set("n", "qq", "<cmd>q<cr><esc>", { desc = "Save file" })
+vim.keymap.set("n", "qq", "<cmd>q<cr><esc>", { desc = "Quit" })
+vim.keymap.set("n", "<C-q>", "<cmd>q<cr><esc>", { desc = "Quit" })
 -- vim.keymap.set("n", "<leader>gg", "<cmd>Neogit kind=vsplit<cr>", { desc = "Neogit" })
 vim.keymap.set("n", "<leader>gg", function()
   Util.float_term({ "gitui" }, { cwd = Util.get_root() })

@@ -76,27 +76,27 @@ return {
       },
     },
   },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "BufReadPre",
-    dependencies = { "mason.nvim" },
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.diagnostics.flake8,
-          nls.builtins.diagnostics.golangci_lint,
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.isort,
-          nls.builtins.formatting.black,
-          nls.builtins.formatting.goimports,
-          -- nls.builtins.formatting.prettierd,
-          nls.builtins.formatting.buf,
-          nls.builtins.code_actions.gomodifytags,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   event = "BufReadPre",
+  --   dependencies = { "mason.nvim" },
+  --   opts = function()
+  --     local nls = require("null-ls")
+  --     return {
+  --       sources = {
+  --         nls.builtins.diagnostics.flake8,
+  --         nls.builtins.diagnostics.golangci_lint,
+  --         nls.builtins.formatting.stylua,
+  --         nls.builtins.formatting.isort,
+  --         nls.builtins.formatting.black,
+  --         nls.builtins.formatting.goimports,
+  --         -- nls.builtins.formatting.prettierd,
+  --         nls.builtins.formatting.buf,
+  --         nls.builtins.code_actions.gomodifytags,
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "mfussenegger/nvim-dap",
   },
@@ -126,7 +126,7 @@ return {
               },
             },
           },
-          lua_ls = {}
+          lua_ls = {},
         },
       },
     },

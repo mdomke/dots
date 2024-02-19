@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
+command_timeout = 700
 
 format = "$character"
 right_format = """
@@ -25,11 +26,13 @@ format = ":[$all_status$ahead_behind]($style)"
 style = "bold purple"
 
 [python]
-format = ' [$virtualenv]($style)'
+format = ' [$virtualenv]($style)@$version'
+version_format = "$major.$minor"
 
 [kubernetes]
-format = " [$context](red bold):[$namespace](cyan bold)"
 disabled = false
+format = " [$context](red bold):[$namespace](cyan bold)"
 
-[kubernetes.context_aliases]
-'fcloud-(?P<cluster>\w*-\w*-\w*)-.*' = '$cluster'
+[[kubernetes.contexts]]
+context_pattern = 'fcloud-(?P<cluster>\w*-\w*-\w*)-.*'
+context_alias = "$cluster"

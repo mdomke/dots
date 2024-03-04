@@ -28,6 +28,7 @@ then
   zgen load "${HOME}/.zthemes"
   zgen load "${HOME}/.cargo/env"
   zgen load "${HOME}/.local/share/completions"
+  zgen load "$(brew --prefix)/share/zsh/site-functions"
   zgen load "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
   zgen load "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
   zgen save

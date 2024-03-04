@@ -3,9 +3,6 @@ name = "python"
 roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
 auto-format = true
 
-[language-server.pylsp]
-args = ["-v", "--log-file", "/tmp/pyslp.log"]
-
 [language-server.pylsp.config.pylsp.plugins]
 ruff = { enabled = true, lineLength = 100, format = ["I"] }
 
@@ -14,7 +11,7 @@ command = "rustup"
 args = ["run", "stable", "rust-analyzer"]
 
 [language-server.rust-analyzer.config]
-check = { command = "clippy" }
+Check = { command = "clippy" }
 
 [language-server.ltex-ls.config]
 ltex.disabledRules = {  "en-US" = [ "PROFANITY" ], "en-GB" = [ "PROFANITY" ] }
@@ -22,7 +19,11 @@ ltex.dictionary = { "en-US" = [ "builtin" ], "en-GB" = [ "builtin" ] }
 
 [[language]]
 name = "go"
-formatter = { command = "golines -m 120" }
+formatter = { command = "golines", args = ["-m", "120"]}
+
+[language-server.gopls.config]
+gofumpt = true
+local = "gitlab.figo.systems"
 
 [[language]]
 name = "yaml"

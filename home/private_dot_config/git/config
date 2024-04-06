@@ -59,7 +59,7 @@
 
 [core]
   autocrlf 		= input
-  excludesfile 	= /Users/martin.domke/.gitignore
+  excludesfile 	= ~/.config/git/gitignore
   editor 		= hx
   pager 		= delta
 
@@ -76,6 +76,7 @@
 
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedSignersFile = ~/.config/git/allowed_signers
 
 [delta]
   features               = side-by-side line-numbers decorations

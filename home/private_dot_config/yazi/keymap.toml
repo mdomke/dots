@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on   = "F"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
+
+[[mgr.prepend_keymap]]
+on   = "P"
+run  = "plugin --sync hide-preview"
+desc = "Hide or show preview"

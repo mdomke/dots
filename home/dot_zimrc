@@ -1,0 +1,26 @@
+# =============================================================================
+# Run `zimfw install` after editing, or just start a new shell (auto-installs).
+# =============================================================================
+zmodule input
+zmodule environment
+
+zstyle ':zim:git' aliases-prefix 'g'
+zmodule git
+
+zmodule utility
+zmodule exa
+
+zmodule direnv
+zmodule magic-enter
+zmodule termtitle
+zmodule fzf
+zmodule k
+zmodule joke/zim-starship
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+zmodule multirious/zsh-helix-mode --branch main
+zmodule zsh-users/zsh-syntax-highlighting         
+zmodule zsh-users/zsh-history-substring-search    
+zmodule zsh-users/zsh-autosuggestions             
